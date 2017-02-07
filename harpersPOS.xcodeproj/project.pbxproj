@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		30839A981E4A166100EFD57F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30839A971E4A166100EFD57F /* AppDelegate.swift */; };
+		30839A9A1E4A166100EFD57F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30839A991E4A166100EFD57F /* ViewController.swift */; };
+		30839A9D1E4A166100EFD57F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30839A9B1E4A166100EFD57F /* Main.storyboard */; };
+		30839A9F1E4A166100EFD57F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30839A9E1E4A166100EFD57F /* Assets.xcassets */; };
+		30839AA21E4A166100EFD57F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30839AA01E4A166100EFD57F /* LaunchScreen.storyboard */; };
+		30839AAD1E4A166100EFD57F /* harpersPOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30839AAC1E4A166100EFD57F /* harpersPOSTests.swift */; };
+		30839AB81E4A166100EFD57F /* harpersPOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30839AB71E4A166100EFD57F /* harpersPOSUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		30839AA91E4A166100EFD57F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30839A8C1E4A166100EFD57F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30839A931E4A166100EFD57F;
+			remoteInfo = harpersPOS;
+		};
+		30839AB41E4A166100EFD57F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30839A8C1E4A166100EFD57F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30839A931E4A166100EFD57F;
+			remoteInfo = harpersPOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		30839A941E4A166100EFD57F /* harpersPOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = harpersPOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30839A971E4A166100EFD57F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		30839A991E4A166100EFD57F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		30839A9C1E4A166100EFD57F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		30839A9E1E4A166100EFD57F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		30839AA11E4A166100EFD57F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		30839AA31E4A166100EFD57F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30839AA81E4A166100EFD57F /* harpersPOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = harpersPOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		30839AAC1E4A166100EFD57F /* harpersPOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = harpersPOSTests.swift; sourceTree = "<group>"; };
+		30839AAE1E4A166100EFD57F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30839AB31E4A166100EFD57F /* harpersPOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = harpersPOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		30839AB71E4A166100EFD57F /* harpersPOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = harpersPOSUITests.swift; sourceTree = "<group>"; };
+		30839AB91E4A166100EFD57F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		30839A911E4A166100EFD57F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30839AA51E4A166100EFD57F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30839AB01E4A166100EFD57F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		30839A8B1E4A166100EFD57F = {
+			isa = PBXGroup;
+			children = (
+				30839A961E4A166100EFD57F /* harpersPOS */,
+				30839AAB1E4A166100EFD57F /* harpersPOSTests */,
+				30839AB61E4A166100EFD57F /* harpersPOSUITests */,
+				30839A951E4A166100EFD57F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		30839A951E4A166100EFD57F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				30839A941E4A166100EFD57F /* harpersPOS.app */,
+				30839AA81E4A166100EFD57F /* harpersPOSTests.xctest */,
+				30839AB31E4A166100EFD57F /* harpersPOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		30839A961E4A166100EFD57F /* harpersPOS */ = {
+			isa = PBXGroup;
+			children = (
+				30839A971E4A166100EFD57F /* AppDelegate.swift */,
+				30839A991E4A166100EFD57F /* ViewController.swift */,
+				30839A9B1E4A166100EFD57F /* Main.storyboard */,
+				30839A9E1E4A166100EFD57F /* Assets.xcassets */,
+				30839AA01E4A166100EFD57F /* LaunchScreen.storyboard */,
+				30839AA31E4A166100EFD57F /* Info.plist */,
+			);
+			path = harpersPOS;
+			sourceTree = "<group>";
+		};
+		30839AAB1E4A166100EFD57F /* harpersPOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				30839AAC1E4A166100EFD57F /* harpersPOSTests.swift */,
+				30839AAE1E4A166100EFD57F /* Info.plist */,
+			);
+			path = harpersPOSTests;
+			sourceTree = "<group>";
+		};
+		30839AB61E4A166100EFD57F /* harpersPOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				30839AB71E4A166100EFD57F /* harpersPOSUITests.swift */,
+				30839AB91E4A166100EFD57F /* Info.plist */,
+			);
+			path = harpersPOSUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		30839A931E4A166100EFD57F /* harpersPOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30839ABC1E4A166100EFD57F /* Build configuration list for PBXNativeTarget "harpersPOS" */;
+			buildPhases = (
+				30839A901E4A166100EFD57F /* Sources */,
+				30839A911E4A166100EFD57F /* Frameworks */,
+				30839A921E4A166100EFD57F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = harpersPOS;
+			productName = harpersPOS;
+			productReference = 30839A941E4A166100EFD57F /* harpersPOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		30839AA71E4A166100EFD57F /* harpersPOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30839ABF1E4A166100EFD57F /* Build configuration list for PBXNativeTarget "harpersPOSTests" */;
+			buildPhases = (
+				30839AA41E4A166100EFD57F /* Sources */,
+				30839AA51E4A166100EFD57F /* Frameworks */,
+				30839AA61E4A166100EFD57F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				30839AAA1E4A166100EFD57F /* PBXTargetDependency */,
+			);
+			name = harpersPOSTests;
+			productName = harpersPOSTests;
+			productReference = 30839AA81E4A166100EFD57F /* harpersPOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		30839AB21E4A166100EFD57F /* harpersPOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30839AC21E4A166100EFD57F /* Build configuration list for PBXNativeTarget "harpersPOSUITests" */;
+			buildPhases = (
+				30839AAF1E4A166100EFD57F /* Sources */,
+				30839AB01E4A166100EFD57F /* Frameworks */,
+				30839AB11E4A166100EFD57F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				30839AB51E4A166100EFD57F /* PBXTargetDependency */,
+			);
+			name = harpersPOSUITests;
+			productName = harpersPOSUITests;
+			productReference = 30839AB31E4A166100EFD57F /* harpersPOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		30839A8C1E4A166100EFD57F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Owen Harper";
+				TargetAttributes = {
+					30839A931E4A166100EFD57F = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = FS4R4RGBU3;
+						ProvisioningStyle = Automatic;
+					};
+					30839AA71E4A166100EFD57F = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = FS4R4RGBU3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 30839A931E4A166100EFD57F;
+					};
+					30839AB21E4A166100EFD57F = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = FS4R4RGBU3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 30839A931E4A166100EFD57F;
+					};
+				};
+			};
+			buildConfigurationList = 30839A8F1E4A166100EFD57F /* Build configuration list for PBXProject "harpersPOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 30839A8B1E4A166100EFD57F;
+			productRefGroup = 30839A951E4A166100EFD57F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				30839A931E4A166100EFD57F /* harpersPOS */,
+				30839AA71E4A166100EFD57F /* harpersPOSTests */,
+				30839AB21E4A166100EFD57F /* harpersPOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		30839A921E4A166100EFD57F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30839AA21E4A166100EFD57F /* LaunchScreen.storyboard in Resources */,
+				30839A9F1E4A166100EFD57F /* Assets.xcassets in Resources */,
+				30839A9D1E4A166100EFD57F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30839AA61E4A166100EFD57F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30839AB11E4A166100EFD57F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		30839A901E4A166100EFD57F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30839A9A1E4A166100EFD57F /* ViewController.swift in Sources */,
+				30839A981E4A166100EFD57F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30839AA41E4A166100EFD57F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30839AAD1E4A166100EFD57F /* harpersPOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30839AAF1E4A166100EFD57F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30839AB81E4A166100EFD57F /* harpersPOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		30839AAA1E4A166100EFD57F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 30839A931E4A166100EFD57F /* harpersPOS */;
+			targetProxy = 30839AA91E4A166100EFD57F /* PBXContainerItemProxy */;
+		};
+		30839AB51E4A166100EFD57F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 30839A931E4A166100EFD57F /* harpersPOS */;
+			targetProxy = 30839AB41E4A166100EFD57F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		30839A9B1E4A166100EFD57F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				30839A9C1E4A166100EFD57F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		30839AA01E4A166100EFD57F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				30839AA11E4A166100EFD57F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		30839ABA1E4A166100EFD57F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		30839ABB1E4A166100EFD57F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		30839ABD1E4A166100EFD57F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FS4R4RGBU3;
+				INFOPLIST_FILE = harpersPOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.owenharper.harpersPOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		30839ABE1E4A166100EFD57F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FS4R4RGBU3;
+				INFOPLIST_FILE = harpersPOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.owenharper.harpersPOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		30839AC01E4A166100EFD57F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = FS4R4RGBU3;
+				INFOPLIST_FILE = harpersPOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.owenharper.harpersPOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/harpersPOS.app/harpersPOS";
+			};
+			name = Debug;
+		};
+		30839AC11E4A166100EFD57F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = FS4R4RGBU3;
+				INFOPLIST_FILE = harpersPOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.owenharper.harpersPOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/harpersPOS.app/harpersPOS";
+			};
+			name = Release;
+		};
+		30839AC31E4A166100EFD57F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = FS4R4RGBU3;
+				INFOPLIST_FILE = harpersPOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.owenharper.harpersPOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = harpersPOS;
+			};
+			name = Debug;
+		};
+		30839AC41E4A166100EFD57F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = FS4R4RGBU3;
+				INFOPLIST_FILE = harpersPOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.owenharper.harpersPOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = harpersPOS;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		30839A8F1E4A166100EFD57F /* Build configuration list for PBXProject "harpersPOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30839ABA1E4A166100EFD57F /* Debug */,
+				30839ABB1E4A166100EFD57F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30839ABC1E4A166100EFD57F /* Build configuration list for PBXNativeTarget "harpersPOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30839ABD1E4A166100EFD57F /* Debug */,
+				30839ABE1E4A166100EFD57F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		30839ABF1E4A166100EFD57F /* Build configuration list for PBXNativeTarget "harpersPOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30839AC01E4A166100EFD57F /* Debug */,
+				30839AC11E4A166100EFD57F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		30839AC21E4A166100EFD57F /* Build configuration list for PBXNativeTarget "harpersPOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30839AC31E4A166100EFD57F /* Debug */,
+				30839AC41E4A166100EFD57F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 30839A8C1E4A166100EFD57F /* Project object */;
+}

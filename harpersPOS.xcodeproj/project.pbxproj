@@ -7,13 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		305B74B31E4B6A5300F40FBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 305B74B21E4B6A5300F40FBA /* Assets.xcassets */; };
+		305B74B51E4B6AA800F40FBA /* addDrinksTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305B74B41E4B6AA800F40FBA /* addDrinksTabBarController.swift */; };
 		30839A981E4A166100EFD57F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30839A971E4A166100EFD57F /* AppDelegate.swift */; };
 		30839A9A1E4A166100EFD57F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30839A991E4A166100EFD57F /* ViewController.swift */; };
 		30839A9D1E4A166100EFD57F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30839A9B1E4A166100EFD57F /* Main.storyboard */; };
-		30839A9F1E4A166100EFD57F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30839A9E1E4A166100EFD57F /* Assets.xcassets */; };
 		30839AA21E4A166100EFD57F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30839AA01E4A166100EFD57F /* LaunchScreen.storyboard */; };
 		30839AAD1E4A166100EFD57F /* harpersPOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30839AAC1E4A166100EFD57F /* harpersPOSTests.swift */; };
 		30839AB81E4A166100EFD57F /* harpersPOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30839AB71E4A166100EFD57F /* harpersPOSUITests.swift */; };
+		30839AC61E4B582E00EFD57F /* navigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30839AC51E4B582E00EFD57F /* navigationBar.swift */; };
+		30F2EF301E4C621900D76ABC /* beerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F2EF2F1E4C621900D76ABC /* beerViewController.swift */; };
+		30F2EF331E4C624800D76ABC /* wineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F2EF321E4C624800D76ABC /* wineViewController.swift */; };
+		30F2EF351E4C626000D76ABC /* spiritsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F2EF341E4C626000D76ABC /* spiritsViewController.swift */; };
+		30F2EF371E4C626F00D76ABC /* softViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F2EF361E4C626F00D76ABC /* softViewController.swift */; };
+		30F2EF391E4C628A00D76ABC /* otherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F2EF381E4C628A00D76ABC /* otherViewController.swift */; };
+		30F2EF3B1E4C637100D76ABC /* orderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F2EF3A1E4C637100D76ABC /* orderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,11 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		305B74B21E4B6A5300F40FBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		305B74B41E4B6AA800F40FBA /* addDrinksTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addDrinksTabBarController.swift; sourceTree = "<group>"; };
 		30839A941E4A166100EFD57F /* harpersPOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = harpersPOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30839A971E4A166100EFD57F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30839A991E4A166100EFD57F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		30839A9C1E4A166100EFD57F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		30839A9E1E4A166100EFD57F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30839AA11E4A166100EFD57F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30839AA31E4A166100EFD57F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30839AA81E4A166100EFD57F /* harpersPOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = harpersPOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +56,13 @@
 		30839AB31E4A166100EFD57F /* harpersPOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = harpersPOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30839AB71E4A166100EFD57F /* harpersPOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = harpersPOSUITests.swift; sourceTree = "<group>"; };
 		30839AB91E4A166100EFD57F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30839AC51E4B582E00EFD57F /* navigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = navigationBar.swift; path = Extensions/navigationBar.swift; sourceTree = "<group>"; };
+		30F2EF2F1E4C621900D76ABC /* beerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = beerViewController.swift; path = "Drink Category Views/beerViewController.swift"; sourceTree = "<group>"; };
+		30F2EF321E4C624800D76ABC /* wineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = wineViewController.swift; path = "Drink Category Views/wineViewController.swift"; sourceTree = "<group>"; };
+		30F2EF341E4C626000D76ABC /* spiritsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = spiritsViewController.swift; path = "Drink Category Views/spiritsViewController.swift"; sourceTree = "<group>"; };
+		30F2EF361E4C626F00D76ABC /* softViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = softViewController.swift; path = "Drink Category Views/softViewController.swift"; sourceTree = "<group>"; };
+		30F2EF381E4C628A00D76ABC /* otherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = otherViewController.swift; path = "Drink Category Views/otherViewController.swift"; sourceTree = "<group>"; };
+		30F2EF3A1E4C637100D76ABC /* orderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = orderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +115,12 @@
 			children = (
 				30839A971E4A166100EFD57F /* AppDelegate.swift */,
 				30839A991E4A166100EFD57F /* ViewController.swift */,
+				30F2EF3A1E4C637100D76ABC /* orderViewController.swift */,
+				305B74B41E4B6AA800F40FBA /* addDrinksTabBarController.swift */,
 				30839A9B1E4A166100EFD57F /* Main.storyboard */,
-				30839A9E1E4A166100EFD57F /* Assets.xcassets */,
+				30F2EF311E4C622700D76ABC /* Drink View Controllers */,
+				305B74B21E4B6A5300F40FBA /* Assets.xcassets */,
+				30839AC51E4B582E00EFD57F /* navigationBar.swift */,
 				30839AA01E4A166100EFD57F /* LaunchScreen.storyboard */,
 				30839AA31E4A166100EFD57F /* Info.plist */,
 			);
@@ -123,6 +143,18 @@
 				30839AB91E4A166100EFD57F /* Info.plist */,
 			);
 			path = harpersPOSUITests;
+			sourceTree = "<group>";
+		};
+		30F2EF311E4C622700D76ABC /* Drink View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				30F2EF2F1E4C621900D76ABC /* beerViewController.swift */,
+				30F2EF321E4C624800D76ABC /* wineViewController.swift */,
+				30F2EF341E4C626000D76ABC /* spiritsViewController.swift */,
+				30F2EF361E4C626F00D76ABC /* softViewController.swift */,
+				30F2EF381E4C628A00D76ABC /* otherViewController.swift */,
+			);
+			name = "Drink View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30839AA21E4A166100EFD57F /* LaunchScreen.storyboard in Resources */,
-				30839A9F1E4A166100EFD57F /* Assets.xcassets in Resources */,
+				305B74B31E4B6A5300F40FBA /* Assets.xcassets in Resources */,
 				30839A9D1E4A166100EFD57F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,8 +294,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30F2EF391E4C628A00D76ABC /* otherViewController.swift in Sources */,
 				30839A9A1E4A166100EFD57F /* ViewController.swift in Sources */,
+				305B74B51E4B6AA800F40FBA /* addDrinksTabBarController.swift in Sources */,
+				30839AC61E4B582E00EFD57F /* navigationBar.swift in Sources */,
+				30F2EF301E4C621900D76ABC /* beerViewController.swift in Sources */,
 				30839A981E4A166100EFD57F /* AppDelegate.swift in Sources */,
+				30F2EF351E4C626000D76ABC /* spiritsViewController.swift in Sources */,
+				30F2EF3B1E4C637100D76ABC /* orderViewController.swift in Sources */,
+				30F2EF371E4C626F00D76ABC /* softViewController.swift in Sources */,
+				30F2EF331E4C624800D76ABC /* wineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +556,7 @@
 				30839ABE1E4A166100EFD57F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		30839ABF1E4A166100EFD57F /* Build configuration list for PBXNativeTarget "harpersPOSTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +565,7 @@
 				30839AC11E4A166100EFD57F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		30839AC21E4A166100EFD57F /* Build configuration list for PBXNativeTarget "harpersPOSUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +574,7 @@
 				30839AC41E4A166100EFD57F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,11 +8,15 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        setStatusBarColor()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,5 +25,15 @@ class ViewController: UIViewController {
     }
 
 
+    
+    
+    
+    
+    //Sets the status bar to white
+    func setStatusBarColor() {
+        let statWindow = UIApplication.shared.value(forKey:"statusBarWindow") as! UIView
+        let statusBar = statWindow.subviews[0] as UIView
+        statusBar.backgroundColor = UIColor.white
+        
+    }
 }
-

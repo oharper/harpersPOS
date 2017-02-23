@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10C840C73817FB1400C773EF /* Pods_harpersPOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9426F4D362762F0DD6EB9D5 /* Pods_harpersPOSTests.framework */; };
+		303913CB1E531338000D24AD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 303913CA1E531338000D24AD /* GoogleService-Info.plist */; };
 		305B74B31E4B6A5300F40FBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 305B74B21E4B6A5300F40FBA /* Assets.xcassets */; };
+		307D22991E5DB7EE00B00959 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307D22971E5DB7EE00B00959 /* Main.storyboard */; };
 		30839A981E4A166100EFD57F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30839A971E4A166100EFD57F /* AppDelegate.swift */; };
 		30839A9A1E4A166100EFD57F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30839A991E4A166100EFD57F /* ViewController.swift */; };
-		30839A9D1E4A166100EFD57F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30839A9B1E4A166100EFD57F /* Main.storyboard */; };
 		30839AA21E4A166100EFD57F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30839AA01E4A166100EFD57F /* LaunchScreen.storyboard */; };
 		30839AAD1E4A166100EFD57F /* harpersPOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30839AAC1E4A166100EFD57F /* harpersPOSTests.swift */; };
 		30839AB81E4A166100EFD57F /* harpersPOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30839AB71E4A166100EFD57F /* harpersPOSUITests.swift */; };
+		30A5762A1E5C84F40056B067 /* managerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A576291E5C84F40056B067 /* managerViewController.swift */; };
+		30A5762C1E5DA46F0056B067 /* orderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A5762B1E5DA46F0056B067 /* orderTableViewCell.swift */; };
+		30A5762E1E5DAEAB0056B067 /* selectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A5762D1E5DAEAB0056B067 /* selectionTableViewCell.swift */; };
 		30F2EF3B1E4C637100D76ABC /* orderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F2EF3A1E4C637100D76ABC /* orderViewController.swift */; };
+		99B3D13D7EEFB188C9DB666B /* Pods_harpersPOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FD12E6305407E61107197F /* Pods_harpersPOS.framework */; };
+		D533A210ADAFE53A69406AB0 /* Pods_harpersPOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D804546EB61A777982199B31 /* Pods_harpersPOSUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,11 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		303913CA1E531338000D24AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		305B74B21E4B6A5300F40FBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		307D22981E5DB7EE00B00959 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		30839A941E4A166100EFD57F /* harpersPOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = harpersPOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30839A971E4A166100EFD57F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30839A991E4A166100EFD57F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		30839A9C1E4A166100EFD57F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		30839AA11E4A166100EFD57F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30839AA31E4A166100EFD57F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30839AA81E4A166100EFD57F /* harpersPOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = harpersPOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,7 +56,19 @@
 		30839AB31E4A166100EFD57F /* harpersPOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = harpersPOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30839AB71E4A166100EFD57F /* harpersPOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = harpersPOSUITests.swift; sourceTree = "<group>"; };
 		30839AB91E4A166100EFD57F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30A576291E5C84F40056B067 /* managerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = managerViewController.swift; sourceTree = "<group>"; };
+		30A5762B1E5DA46F0056B067 /* orderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = orderTableViewCell.swift; sourceTree = "<group>"; };
+		30A5762D1E5DAEAB0056B067 /* selectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = selectionTableViewCell.swift; sourceTree = "<group>"; };
 		30F2EF3A1E4C637100D76ABC /* orderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = orderViewController.swift; sourceTree = "<group>"; };
+		3B70C50048FE69B0DCB4C306 /* Pods-harpersPOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-harpersPOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-harpersPOS/Pods-harpersPOS.release.xcconfig"; sourceTree = "<group>"; };
+		9B8ACB3D589F84BB6D01793E /* Pods-harpersPOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-harpersPOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-harpersPOSUITests/Pods-harpersPOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A3DDD28C50008F7B4B496978 /* Pods-harpersPOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-harpersPOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-harpersPOS/Pods-harpersPOS.debug.xcconfig"; sourceTree = "<group>"; };
+		BF8028666EB6A1D9D6D93856 /* Pods-harpersPOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-harpersPOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-harpersPOSTests/Pods-harpersPOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		D3FD12E6305407E61107197F /* Pods_harpersPOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_harpersPOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D804546EB61A777982199B31 /* Pods_harpersPOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_harpersPOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E361C8B6E4C623043AB87331 /* Pods-harpersPOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-harpersPOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-harpersPOSUITests/Pods-harpersPOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F2CCED3C00BF4717F7DB3447 /* Pods-harpersPOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-harpersPOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-harpersPOSTests/Pods-harpersPOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F9426F4D362762F0DD6EB9D5 /* Pods_harpersPOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_harpersPOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99B3D13D7EEFB188C9DB666B /* Pods_harpersPOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10C840C73817FB1400C773EF /* Pods_harpersPOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D533A210ADAFE53A69406AB0 /* Pods_harpersPOSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +106,8 @@
 				30839AAB1E4A166100EFD57F /* harpersPOSTests */,
 				30839AB61E4A166100EFD57F /* harpersPOSUITests */,
 				30839A951E4A166100EFD57F /* Products */,
+				83A9F63629C8ECD550F4AC41 /* Pods */,
+				4FFEE4B79233BCF4C9930BA0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,10 +127,14 @@
 				30839A971E4A166100EFD57F /* AppDelegate.swift */,
 				30839A991E4A166100EFD57F /* ViewController.swift */,
 				30F2EF3A1E4C637100D76ABC /* orderViewController.swift */,
-				30839A9B1E4A166100EFD57F /* Main.storyboard */,
+				307D22971E5DB7EE00B00959 /* Main.storyboard */,
+				30A5762D1E5DAEAB0056B067 /* selectionTableViewCell.swift */,
+				30A5762B1E5DA46F0056B067 /* orderTableViewCell.swift */,
+				30A576291E5C84F40056B067 /* managerViewController.swift */,
 				305B74B21E4B6A5300F40FBA /* Assets.xcassets */,
 				30839AA01E4A166100EFD57F /* LaunchScreen.storyboard */,
 				30839AA31E4A166100EFD57F /* Info.plist */,
+				303913CA1E531338000D24AD /* GoogleService-Info.plist */,
 			);
 			path = harpersPOS;
 			sourceTree = "<group>";
@@ -128,6 +157,29 @@
 			path = harpersPOSUITests;
 			sourceTree = "<group>";
 		};
+		4FFEE4B79233BCF4C9930BA0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3FD12E6305407E61107197F /* Pods_harpersPOS.framework */,
+				F9426F4D362762F0DD6EB9D5 /* Pods_harpersPOSTests.framework */,
+				D804546EB61A777982199B31 /* Pods_harpersPOSUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		83A9F63629C8ECD550F4AC41 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A3DDD28C50008F7B4B496978 /* Pods-harpersPOS.debug.xcconfig */,
+				3B70C50048FE69B0DCB4C306 /* Pods-harpersPOS.release.xcconfig */,
+				F2CCED3C00BF4717F7DB3447 /* Pods-harpersPOSTests.debug.xcconfig */,
+				BF8028666EB6A1D9D6D93856 /* Pods-harpersPOSTests.release.xcconfig */,
+				E361C8B6E4C623043AB87331 /* Pods-harpersPOSUITests.debug.xcconfig */,
+				9B8ACB3D589F84BB6D01793E /* Pods-harpersPOSUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +187,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30839ABC1E4A166100EFD57F /* Build configuration list for PBXNativeTarget "harpersPOS" */;
 			buildPhases = (
+				6C6D319C6C5D9196C288B593 /* [CP] Check Pods Manifest.lock */,
 				30839A901E4A166100EFD57F /* Sources */,
 				30839A911E4A166100EFD57F /* Frameworks */,
 				30839A921E4A166100EFD57F /* Resources */,
+				9AABA5641C869538FE260040 /* [CP] Embed Pods Frameworks */,
+				B5E260A9A10EDC9FACC7BAA5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +207,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30839ABF1E4A166100EFD57F /* Build configuration list for PBXNativeTarget "harpersPOSTests" */;
 			buildPhases = (
+				44DED66AA32FBEDD49122C7D /* [CP] Check Pods Manifest.lock */,
 				30839AA41E4A166100EFD57F /* Sources */,
 				30839AA51E4A166100EFD57F /* Frameworks */,
 				30839AA61E4A166100EFD57F /* Resources */,
+				E274EB1838D267A3131EEBF0 /* [CP] Embed Pods Frameworks */,
+				A9D994668385908B70D6E696 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +228,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30839AC21E4A166100EFD57F /* Build configuration list for PBXNativeTarget "harpersPOSUITests" */;
 			buildPhases = (
+				989054CF19A49151C68CD0C9 /* [CP] Check Pods Manifest.lock */,
 				30839AAF1E4A166100EFD57F /* Sources */,
 				30839AB01E4A166100EFD57F /* Frameworks */,
 				30839AB11E4A166100EFD57F /* Resources */,
+				6AB6A3FF1FEC3E42CF51ABDC /* [CP] Embed Pods Frameworks */,
+				6CC6A15CF7C9A0A34F09E0DB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -240,7 +301,8 @@
 			files = (
 				30839AA21E4A166100EFD57F /* LaunchScreen.storyboard in Resources */,
 				305B74B31E4B6A5300F40FBA /* Assets.xcassets in Resources */,
-				30839A9D1E4A166100EFD57F /* Main.storyboard in Resources */,
+				303913CB1E531338000D24AD /* GoogleService-Info.plist in Resources */,
+				307D22991E5DB7EE00B00959 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,14 +322,155 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		44DED66AA32FBEDD49122C7D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6AB6A3FF1FEC3E42CF51ABDC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-harpersPOSUITests/Pods-harpersPOSUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C6D319C6C5D9196C288B593 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6CC6A15CF7C9A0A34F09E0DB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-harpersPOSUITests/Pods-harpersPOSUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		989054CF19A49151C68CD0C9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9AABA5641C869538FE260040 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-harpersPOS/Pods-harpersPOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9D994668385908B70D6E696 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-harpersPOSTests/Pods-harpersPOSTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5E260A9A10EDC9FACC7BAA5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-harpersPOS/Pods-harpersPOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E274EB1838D267A3131EEBF0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-harpersPOSTests/Pods-harpersPOSTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		30839A901E4A166100EFD57F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30A5762A1E5C84F40056B067 /* managerViewController.swift in Sources */,
 				30839A9A1E4A166100EFD57F /* ViewController.swift in Sources */,
 				30839A981E4A166100EFD57F /* AppDelegate.swift in Sources */,
 				30F2EF3B1E4C637100D76ABC /* orderViewController.swift in Sources */,
+				30A5762E1E5DAEAB0056B067 /* selectionTableViewCell.swift in Sources */,
+				30A5762C1E5DA46F0056B067 /* orderTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,10 +506,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		30839A9B1E4A166100EFD57F /* Main.storyboard */ = {
+		307D22971E5DB7EE00B00959 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				30839A9C1E4A166100EFD57F /* Base */,
+				307D22981E5DB7EE00B00959 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -417,6 +620,7 @@
 		};
 		30839ABD1E4A166100EFD57F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3DDD28C50008F7B4B496978 /* Pods-harpersPOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FS4R4RGBU3;
@@ -431,6 +635,7 @@
 		};
 		30839ABE1E4A166100EFD57F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B70C50048FE69B0DCB4C306 /* Pods-harpersPOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FS4R4RGBU3;
@@ -445,6 +650,7 @@
 		};
 		30839AC01E4A166100EFD57F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2CCED3C00BF4717F7DB3447 /* Pods-harpersPOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -460,6 +666,7 @@
 		};
 		30839AC11E4A166100EFD57F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF8028666EB6A1D9D6D93856 /* Pods-harpersPOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -475,6 +682,7 @@
 		};
 		30839AC31E4A166100EFD57F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E361C8B6E4C623043AB87331 /* Pods-harpersPOSUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = FS4R4RGBU3;
@@ -489,6 +697,7 @@
 		};
 		30839AC41E4A166100EFD57F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B8ACB3D589F84BB6D01793E /* Pods-harpersPOSUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = FS4R4RGBU3;

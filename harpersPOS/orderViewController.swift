@@ -7,13 +7,21 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class orderViewController: UIViewController, UITabBarDelegate, UITableViewDataSource, UITableViewDelegate {
 
+// Dont think these two are needed??
+//    var ref:FIRDatabaseReference?
+//    var databaseHandle:FIRDatabaseHandle?
+    
+    let database = FIRDatabase.database().reference()
+    
     @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var drinksTable: UITableView!
     @IBOutlet weak var orderTable: UITableView!
-    
+    @IBOutlet weak var subTotalLabel: UILabel!
     
     //Action method for when the void button is pressed
     @IBAction func voidPressed(_ sender: Any) {
@@ -35,7 +43,7 @@ class orderViewController: UIViewController, UITabBarDelegate, UITableViewDataSo
     //Action method for when save button is pressed
     @IBAction func savePressed(_ sender: Any) {
         
-        let alert = UIAlertController(title: "Cash/Card or Tab?", message: "Do you want to charge BY cash/card or put it on a tab?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Cash/Card or Tab?", message: "Do you want to charge by cash/card or put it on a tab?", preferredStyle: .alert)
         let clearAction = UIAlertAction(title: "Cash/Card", style: .default) { (alert: UIAlertAction!) -> Void in
             //code here if by cash/card
         }
@@ -55,35 +63,135 @@ class orderViewController: UIViewController, UITabBarDelegate, UITableViewDataSo
     var rightTableCount: Int = 0
     var orderValue: String = ""
     var isInOrder: Bool = false
-    var itemToRemoveIndex: Int = 0
+    var alreadyInOrderIndex: Int = 0
+    var subTotal: Double = 0
     
     var currentCategoryArray: [String] = []
     var currentOrder: [String] = []
-    var beerArray: [String] = ["Fosters, 2.40", "Carling, 2.50", "Carling, 2.50"]
-    var wineArray: [String] = ["Chardony, 6.50", "Sauvignon Blanc, 7.20"]
-    var spiritsArray: [String] = ["Shot, 3.20", "Mixer, 4.50"]
-    var softArray: [String] = ["Red Bull, 2.00", "Can, 1.50", "Orange Juice, 2.00"]
-    var otherArray: [String] = ["Water, 2.00", "Sparkling Water, 2.50"]
+    
+    var beerArray: [String] = []
+    var wineArray: [String] = []
+    var spiritsArray: [String] = []
+    var softArray: [String] = []
+    var otherArray: [String] = []
+    
+    
+    
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Runs the method to set the font of the tab bar
         tabBarFont()
+        
+        writeFirebase(child: "Carling", value: "2.40", database: database.child("Drinks").child("Beer"))
+        writeFirebase(child: "Coke", value: "1.50", database: database.child("Drinks").child("Soft"))
+        
+        //Populates drinks arrays from firebase
+        readFirebase()
         
         //Automatically selects the first item in the tab bar
         tabBar.selectedItem = (tabBar.items?[0])! as UITabBarItem;
+        
         //Loads the table with the default beer array
         currentCategoryArray = beerArray
         
     }
     
     
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //Function to write to firebase when given a child, value and database reference
+    func writeFirebase(child: String, value: String, database: FIRDatabaseReference) {
+        
+        database.child(child).setValue(value)
+        
+    }
+    
+    func readFirebase() {
+        
+        database.child("Drinks").child("Beer").observeSingleEvent(of: .value, with: { snapshot in
+            if let result = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for child in result {
+                    let orderName = child.key 
+                    let orderPrice = child.value as! String
+                    
+                    
+                    self.beerArray.append(orderName + ", " + orderPrice)
+                    self.currentCategoryArray = self.beerArray
+                    self.drinksTable.reloadData()
+                    
+                }
+            }
+        })
+        
+        database.child("Drinks").child("Wine").observeSingleEvent(of: .value, with: { snapshot in
+            if let result = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for child in result {
+                    let orderName = child.key 
+                    let orderPrice = child.value as! String
+                    
+                    
+                    self.wineArray.append(orderName + ", " + orderPrice)
+                    self.currentCategoryArray = self.beerArray
+                    self.drinksTable.reloadData()
+                    
+                }
+            }
+        })
+        
+        database.child("Drinks").child("Spirits").observeSingleEvent(of: .value, with: { snapshot in
+            if let result = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for child in result {
+                    let orderName = child.key 
+                    let orderPrice = child.value as! String
+                    
+                    
+                    self.spiritsArray.append(orderName + ", " + orderPrice)
+                    self.currentCategoryArray = self.beerArray
+                    self.drinksTable.reloadData()
+                    
+                }
+            }
+        })
+        
+        database.child("Drinks").child("Soft").observeSingleEvent(of: .value, with: { snapshot in
+            if let result = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for child in result {
+                    let orderName = child.key 
+                    let orderPrice = child.value as! String
+                    
+                    
+                    self.softArray.append(orderName + ", " + orderPrice)
+                    self.currentCategoryArray = self.beerArray
+                    self.drinksTable.reloadData()
+                    
+                }
+            }
+        })
+        
+        database.child("Drinks").child("Other").observeSingleEvent(of: .value, with: { snapshot in
+            if let result = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for child in result {
+                    let orderName = child.key 
+                    let orderPrice = child.value as! String
+                    
+                    
+                    self.otherArray.append(orderName + ", " + orderPrice)
+                    self.currentCategoryArray = self.beerArray
+                    self.drinksTable.reloadData()
+                    
+                }
+            }
+        })
+    }
+    
     
     //Function that counts the number of items in the table arrays
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -100,21 +208,32 @@ class orderViewController: UIViewController, UITabBarDelegate, UITableViewDataSo
         }
     }
     
-
     //Method to put the data from the arrays into the tables
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as UITableViewCell
-        cell.textLabel?.font = UIFont.systemFont(ofSize: 24)
         
         if (tableView.tag == 0) {
-            cell.textLabel?.text = getName(item: currentCategoryArray[indexPath.row])
-            cell.detailTextLabel?.text = "£" + getPrice(item: currentCategoryArray[indexPath.row])
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! selectionTableViewCell
+            
+            cell.selectionNameLabel.text = getName(item: currentCategoryArray[indexPath.row])
+            cell.selectionPriceLabel.text = "£" + getPrice(item: currentCategoryArray[indexPath.row])
+            return cell
         }
-        else if (tableView.tag == 1) {
-            cell.textLabel?.text = currentOrder[indexPath.row]
+        else {
+            //Custom cell label update here!
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "orderCell", for: indexPath) as! orderTableViewCell
+            
+            cell.nameLabel.text = getName(item: currentOrder[indexPath.row]) + " x " + getQuantityDigit(item: currentOrder[indexPath.row])
+            
+            cell.singlePriceLabel.text = "£" + getPrice(item: currentOrder[indexPath.row])
+            
+            let quantityPrice = Double(getQuantityDigit(item: currentOrder[indexPath.row]))! * Double(getPrice(item: currentOrder[indexPath.row]))!
+            cell.quantityPriceLabel.text = "£" + String(format:"%.2f", quantityPrice)
+            
+            return cell
         }
-        return cell
     }
     
     
@@ -141,54 +260,60 @@ class orderViewController: UIViewController, UITabBarDelegate, UITableViewDataSo
     
     
     
-    
-    //Method to add/remove drinks when tapped on
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        
-//        if (tableView.tag == 0) {
-//            let toBeMoved = currentCategoryArray[indexPath.row]
-//            
-//            if checkAlreadyInOrder(toBeMoved: toBeMoved) {
-//                //code here for if it is already in order
-//                let orderValue = getAlreadyInOrder(toBeMoved: toBeMoved)
-////                let index = orderValue.index(orderValue.endIndex, offsetBy: -2)
-////                let quantity = orderValue[index]
-//                let quantity = getQuantityDigit(item: orderValue)
-//                let newQuantity = Int(String(quantity))! + 1
-//                
-//                let itemToRemoveIndex = getAlreadyInOrderIndex(itemToRemove: orderValue)
-//                currentOrder[itemToRemoveIndex] = toBeMoved + ", - " + String(newQuantity)
-//                
-//                self.orderTable.reloadData()
-//            }
-//            else {
-//                //code here for if it is not already in order
-//                currentOrder.append(toBeMoved+", - 1")
-//                self.orderTable.reloadData()
-//            }
-//        }
-//        else if (tableView.tag == 1) {
-//            
-//            let indexToBeMoved = currentOrder[indexPath.row].index(currentOrder[indexPath.row].endIndex, offsetBy: -3)
-//            let toBeMoved: String = currentOrder[indexPath.row].substring(to: indexToBeMoved)
-//            let orderValue = getAlreadyInOrder(toBeMoved: toBeMoved)
-//            let index = orderValue.index(orderValue.endIndex, offsetBy: -2)
-//            let quantity = orderValue[index]
-//            let newQuantity = Int(String(quantity))! - 1
-//            
-//            let itemToRemoveIndex = getAlreadyInOrderIndex(itemToRemove: orderValue)
-//            
-//            
-//            if newQuantity > 0 {
-//                currentOrder[itemToRemoveIndex] = toBeMoved + ", - " + String(newQuantity)
-//            } else {
-//                currentOrder.remove(at: indexPath.row)
-//            }
-//            self.orderTable.reloadData()
-//            
-//            
-//        }
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let toBeMoved = currentCategoryArray[indexPath.row]
+        
+        if (tableView.tag == 0) {
+            if checkAlreadyInOrder(toBeMoved: toBeMoved) {
+                //code here if left table tapped and already in order
+                let toBeMovedName = getName(item: toBeMoved)
+                let toBeMovedIndex = getAlreadyInOrderIndex(itemToGet: toBeMovedName)
+                var toBeMovedQuantity = Int(getQuantityDigit(item:currentOrder[toBeMovedIndex]))!
+                let toBeMovedPrice = getPrice(item: currentOrder[toBeMovedIndex])
+                
+                toBeMovedQuantity += 1
+                subTotal = subTotal + Double(toBeMovedPrice)!
+                subTotalLabel.text = "Sub Total: £" + String(format:"%.2f", subTotal)
+                currentOrder[toBeMovedIndex] = toBeMovedName + ", " + toBeMovedPrice + ", "  + String(toBeMovedQuantity)
+                self.orderTable.reloadData()
+            }
+            else {
+                //code here if left table tapped and not already in order
+                currentOrder.append(toBeMoved + ", " + "1")
+                let toBeMovedName = getName(item: toBeMoved)
+                let toBeMovedIndex = getAlreadyInOrderIndex(itemToGet: toBeMovedName)
+                let toBeMovedPrice = getPrice(item: currentOrder[toBeMovedIndex])
+                subTotal = subTotal + Double(toBeMovedPrice)!
+                subTotalLabel.text = "Sub Total: £" + String(format:"%.2f", subTotal)
+                self.orderTable.reloadData()
+            }
+        }
+        else if (tableView.tag == 1) {
+            let toBeMovedName = getName(item: toBeMoved)
+            let toBeMovedIndex = getAlreadyInOrderIndex(itemToGet: toBeMovedName)
+            var toBeMovedQuantity = Int(getQuantityDigit(item:currentOrder[toBeMovedIndex]))!
+            let toBeMovedPrice = getPrice(item: currentOrder[toBeMovedIndex])
+            subTotal = subTotal - Double(toBeMovedPrice)!
+            subTotalLabel.text = "Sub Total: £" + String(format:"%.2f", subTotal)
+            if toBeMovedQuantity > 1 {
+                toBeMovedQuantity -= 1
+                currentOrder[toBeMovedIndex] = toBeMovedName + ", " + toBeMovedPrice + ", "  + String(toBeMovedQuantity)
+                self.orderTable.reloadData()
+            }
+            else {
+                currentOrder.remove(at: toBeMovedIndex)
+                self.orderTable.reloadData()
+            }
+            
+            
+        }
+        
+        if currentOrder.isEmpty {
+            subTotalLabel.text = "Sub Total: £0.00"
+        }
+        
+    }
     
     
     //Function to get the value of the drink that is already in the order
@@ -214,14 +339,14 @@ class orderViewController: UIViewController, UITabBarDelegate, UITableViewDataSo
     }
     
     //Function to get the index in the array of the item that is already in the order
-    func getAlreadyInOrderIndex(itemToRemove: String) -> Int {
-        while currentOrder.contains(itemToRemove) {
-            if let itemToRemoveIndex = currentOrder.index(of: itemToRemove) {
-                
-                return itemToRemoveIndex
+    func getAlreadyInOrderIndex(itemToGet: String) -> Int {
+        for item in currentOrder {
+            if getName(item: item) == itemToGet {
+                let alreadyInOrderIndex = currentOrder.index(of: item)
+                return alreadyInOrderIndex!
             }
         }
-        return itemToRemoveIndex
+        return alreadyInOrderIndex
     }
     
     
@@ -231,35 +356,22 @@ class orderViewController: UIViewController, UITabBarDelegate, UITableViewDataSo
     
     //Method to change currentArray depending on which category is selected
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        var category: String = ""
         
         switch item.tag  {
         case 0:
             currentCategoryArray = beerArray
-            category = "beer"
-            print(category)
             break
         case 1:
             currentCategoryArray = wineArray
-            category = "wine"
-            print(category)
             break
         case 2:
             currentCategoryArray = spiritsArray
-            category = "spirits"
-            print(category)
             break
         case 3:
             currentCategoryArray = softArray
-            category = "soft"
-            print(category)
         case 4:
             currentCategoryArray = otherArray
-            category = "other"
-            print(category)
         default:
-            category = "beer"
-            print(category)
             break
         }
         self.drinksTable.reloadData()

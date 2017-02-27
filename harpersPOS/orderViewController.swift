@@ -42,19 +42,22 @@ class orderViewController: UIViewController, UITabBarDelegate, UITableViewDataSo
     
     //Action method for when save button is pressed
     @IBAction func savePressed(_ sender: Any) {
-        
+        if currentOrder.isEmpty == false {
         let alert = UIAlertController(title: "Cash/Card or Tab?", message: "Do you want to charge by cash/card or put it on a tab?", preferredStyle: .alert)
         let clearAction = UIAlertAction(title: "Cash/Card", style: .default) { (alert: UIAlertAction!) -> Void in
             //code here if by cash/card
+            self.performSegue(withIdentifier: "orderToCash", sender: nil)
         }
         let cancelAction = UIAlertAction(title: "Tab", style: .default) { (alert: UIAlertAction!) -> Void in
             //code here if on tab
+            self.performSegue(withIdentifier: "orderToQR", sender: nil)
         }
         
         alert.addAction(clearAction)
         alert.addAction(cancelAction)
         
         present(alert, animated: true, completion:nil)
+        }
         
     }
     
@@ -383,12 +386,30 @@ class orderViewController: UIViewController, UITabBarDelegate, UITableViewDataSo
         let attributes: [String: AnyObject] = [NSFontAttributeName:UIFont(name: "AppleSDGothicNeo-Bold", size: 18)!, NSForegroundColorAttributeName: UIColor.black]
         appearance.setTitleTextAttributes(attributes, for: .normal)
     }
+
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "orderToCash") {
+            let view : cashViewController = segue.destination as! cashViewController;
+            view.subTotal = subTotal
+        }
+        
+        if (segue.identifier == "orderToQR") {
+            let view : qrViewController = segue.destination as! qrViewController;
+            view.currentOrder = currentOrder
+        }
+    }
     
+    override var shouldAutorotate: Bool {
+        return true
+    }
     
+    override var supportedInterfaceOrientations:UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.landscapeRight
+    }
+
+
 }
-
-
-
 /*
  // MARK: - Navigation
  

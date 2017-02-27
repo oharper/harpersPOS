@@ -69,12 +69,25 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AC3-Z7-kPz">
+                                <rect key="frame" x="964" y="34" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="wcz-Pz-2oE"/>
+                                </constraints>
+                                <state key="normal" image="information-button"/>
+                                <connections>
+                                    <segue destination="2vN-1a-Nr8" kind="show" id="iOP-Lz-fH3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.21176470588235294" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="jmd-gP-eUB" firstAttribute="centerY" secondItem="wFE-zQ-d5O" secondAttribute="centerY" id="ESZ-ri-5XW"/>
                             <constraint firstItem="NAt-ca-YgN" firstAttribute="top" secondItem="O6M-zW-bDh" secondAttribute="top" id="GVe-42-pgb"/>
+                            <constraint firstItem="AC3-Z7-kPz" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Oex-Qs-Dk4"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NAt-ca-YgN" secondAttribute="bottom" constant="187" id="U45-1D-HdP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AC3-Z7-kPz" secondAttribute="bottom" constant="694" id="U47-S3-33w"/>
+                            <constraint firstItem="AC3-Z7-kPz" firstAttribute="top" secondItem="wFE-zQ-d5O" secondAttribute="top" id="UJx-Or-q55"/>
                             <constraint firstItem="jmd-gP-eUB" firstAttribute="leading" secondItem="NAt-ca-YgN" secondAttribute="leading" id="kVB-Jg-Kkq"/>
                             <constraint firstItem="jmd-gP-eUB" firstAttribute="trailing" secondItem="O6M-zW-bDh" secondAttribute="trailing" id="olk-XJ-xbu"/>
                             <constraint firstItem="jmd-gP-eUB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="28" id="opq-3x-kXK"/>
@@ -87,6 +100,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="33.984375" y="39.84375"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4Yd-TZ-QMY">
+            <objects>
+                <viewController id="2vN-1a-Nr8" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aIo-te-ooa"/>
+                        <viewControllerLayoutGuide type="bottom" id="h7V-gl-N4M"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BSt-AG-eOB">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="harpersPOS credits" translatesAutoresizingMaskIntoConstraints="NO" id="30K-KJ-6AF">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m6A-N7-O6N">
+                                <rect key="frame" x="921" y="673" width="83" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="83" id="nQk-f9-YiL"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="success"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" animates="NO" id="mlH-Lk-FOt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="30K-KJ-6AF" firstAttribute="bottom" secondItem="h7V-gl-N4M" secondAttribute="top" id="9QT-RJ-fVA"/>
+                            <constraint firstAttribute="bottom" secondItem="m6A-N7-O6N" secondAttribute="bottom" constant="20" symbolic="YES" id="BWO-FD-I2m"/>
+                            <constraint firstItem="m6A-N7-O6N" firstAttribute="top" secondItem="aIo-te-ooa" secondAttribute="bottom" constant="653" id="gh1-V0-OdQ"/>
+                            <constraint firstItem="30K-KJ-6AF" firstAttribute="top" secondItem="BSt-AG-eOB" secondAttribute="top" id="kD0-1L-sra"/>
+                            <constraint firstItem="30K-KJ-6AF" firstAttribute="leading" secondItem="BSt-AG-eOB" secondAttribute="leading" id="pWD-yZ-utM"/>
+                            <constraint firstItem="m6A-N7-O6N" firstAttribute="trailing" secondItem="BSt-AG-eOB" secondAttribute="trailingMargin" id="zK1-Qi-ibi"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="scp-en-94m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33.984375" y="-858.59375"/>
         </scene>
         <!--Order View Controller-->
         <scene sceneID="Ajo-a0-7WX">
@@ -311,11 +365,85 @@
                         <outlet property="subTotalLabel" destination="HyO-FG-tex" id="uPD-Wk-qzg"/>
                         <outlet property="tabBar" destination="K1T-jl-Gei" id="c2r-Db-qk2"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="orderToInitial" animates="NO" id="jwC-t7-d6g"/>
+                        <segue destination="b1e-Xy-WPn" kind="show" identifier="orderToCash" id="gba-7W-TVb"/>
+                        <segue destination="Yjs-JF-rma" kind="show" identifier="orderToQR" id="Bpi-fM-uWy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zzz-2m-URU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="731.8359375" y="-286.71875"/>
+        </scene>
+        <!--Cash View Controller-->
+        <scene sceneID="siL-k1-DcW">
+            <objects>
+                <viewController id="b1e-Xy-WPn" customClass="cashViewController" customModule="harpersPOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k7L-lz-D1V"/>
+                        <viewControllerLayoutGuide type="bottom" id="pPa-Qa-a9d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tbn-mk-x5u">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIp-Ow-8qD">
+                                <rect key="frame" x="196" y="236" width="633" height="296"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="633" id="sEJ-WX-GP1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="189"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwt-TR-Fen">
+                                <rect key="frame" x="776" y="540" width="191" height="172"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="191" id="wIp-nP-ZnR"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="success"/>
+                                <connections>
+                                    <action selector="donePressed:" destination="b1e-Xy-WPn" eventType="touchUpInside" id="m41-yg-WWg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0015109573723748326" green="0.21320688724517822" blue="0.45007544755935669" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mIp-Ow-8qD" firstAttribute="centerY" secondItem="tbn-mk-x5u" secondAttribute="centerY" id="Fap-KN-gt2"/>
+                            <constraint firstItem="pPa-Qa-a9d" firstAttribute="top" secondItem="wwt-TR-Fen" secondAttribute="bottom" constant="56" id="GNf-xG-KYV"/>
+                            <constraint firstItem="mIp-Ow-8qD" firstAttribute="centerX" secondItem="tbn-mk-x5u" secondAttribute="centerX" id="Z8o-0d-roa"/>
+                            <constraint firstItem="wwt-TR-Fen" firstAttribute="top" secondItem="mIp-Ow-8qD" secondAttribute="bottom" constant="8" symbolic="YES" id="bno-JB-DV4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wwt-TR-Fen" secondAttribute="trailing" constant="37" id="fZP-Hm-V7h"/>
+                            <constraint firstItem="mIp-Ow-8qD" firstAttribute="top" secondItem="k7L-lz-D1V" secondAttribute="bottom" constant="216" id="qFi-DR-E6X"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="priceLabel" destination="mIp-Ow-8qD" id="JFO-B6-c0X"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="cashToInitial" animates="NO" id="qDm-tN-Qep"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZkU-Ap-Jlf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1543" y="-557"/>
+        </scene>
+        <!--Qr View Controller-->
+        <scene sceneID="KUY-Qf-hCs">
+            <objects>
+                <viewController id="Yjs-JF-rma" customClass="qrViewController" customModule="harpersPOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LGf-Bj-IhO"/>
+                        <viewControllerLayoutGuide type="bottom" id="oDe-zd-1Cc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zbh-M9-XOh">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="qrToInitial" id="oPI-xr-k1I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hHs-Ul-XYV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1543" y="397"/>
         </scene>
         <!--Manager View Controller-->
         <scene sceneID="0WP-98-GAn">
@@ -343,8 +471,13 @@
         <image name="drink-3" width="50" height="50"/>
         <image name="eeeca6_291ff2cea6a98489a881f2816077602d" width="512" height="189"/>
         <image name="error" width="512" height="512"/>
+        <image name="harpersPOS credits" width="1024" height="748"/>
         <image name="harpersPOSBackground" width="2048" height="1498"/>
+        <image name="information-button" width="512" height="512"/>
         <image name="more1600" width="50" height="50"/>
         <image name="success" width="512" height="512"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="oPI-xr-k1I"/>
+    </inferredMetricsTieBreakers>
 </document>

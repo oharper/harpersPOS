@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		10C840C73817FB1400C773EF /* Pods_harpersPOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9426F4D362762F0DD6EB9D5 /* Pods_harpersPOSTests.framework */; };
+		302BAE5A1E6051F70024814C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 302BAE591E6051F70024814C /* Assets.xcassets */; };
+		302BAE5C1E6073DB0024814C /* cashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302BAE5B1E6073DB0024814C /* cashViewController.swift */; };
+		302BAE5E1E60A1210024814C /* qrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302BAE5D1E60A1210024814C /* qrViewController.swift */; };
 		303913CB1E531338000D24AD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 303913CA1E531338000D24AD /* GoogleService-Info.plist */; };
-		305B74B31E4B6A5300F40FBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 305B74B21E4B6A5300F40FBA /* Assets.xcassets */; };
 		307D22991E5DB7EE00B00959 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307D22971E5DB7EE00B00959 /* Main.storyboard */; };
 		30839A981E4A166100EFD57F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30839A971E4A166100EFD57F /* AppDelegate.swift */; };
 		30839A9A1E4A166100EFD57F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30839A991E4A166100EFD57F /* ViewController.swift */; };
@@ -42,8 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		302BAE591E6051F70024814C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		302BAE5B1E6073DB0024814C /* cashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cashViewController.swift; sourceTree = "<group>"; };
+		302BAE5D1E60A1210024814C /* qrViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = qrViewController.swift; sourceTree = "<group>"; };
 		303913CA1E531338000D24AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		305B74B21E4B6A5300F40FBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		307D22981E5DB7EE00B00959 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		30839A941E4A166100EFD57F /* harpersPOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = harpersPOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30839A971E4A166100EFD57F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,10 +132,12 @@
 				30839A991E4A166100EFD57F /* ViewController.swift */,
 				30F2EF3A1E4C637100D76ABC /* orderViewController.swift */,
 				307D22971E5DB7EE00B00959 /* Main.storyboard */,
+				302BAE5D1E60A1210024814C /* qrViewController.swift */,
+				302BAE5B1E6073DB0024814C /* cashViewController.swift */,
 				30A5762D1E5DAEAB0056B067 /* selectionTableViewCell.swift */,
 				30A5762B1E5DA46F0056B067 /* orderTableViewCell.swift */,
 				30A576291E5C84F40056B067 /* managerViewController.swift */,
-				305B74B21E4B6A5300F40FBA /* Assets.xcassets */,
+				302BAE591E6051F70024814C /* Assets.xcassets */,
 				30839AA01E4A166100EFD57F /* LaunchScreen.storyboard */,
 				30839AA31E4A166100EFD57F /* Info.plist */,
 				303913CA1E531338000D24AD /* GoogleService-Info.plist */,
@@ -300,8 +306,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				30839AA21E4A166100EFD57F /* LaunchScreen.storyboard in Resources */,
-				305B74B31E4B6A5300F40FBA /* Assets.xcassets in Resources */,
 				303913CB1E531338000D24AD /* GoogleService-Info.plist in Resources */,
+				302BAE5A1E6051F70024814C /* Assets.xcassets in Resources */,
 				307D22991E5DB7EE00B00959 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,8 +474,10 @@
 				30A5762A1E5C84F40056B067 /* managerViewController.swift in Sources */,
 				30839A9A1E4A166100EFD57F /* ViewController.swift in Sources */,
 				30839A981E4A166100EFD57F /* AppDelegate.swift in Sources */,
+				302BAE5E1E60A1210024814C /* qrViewController.swift in Sources */,
 				30F2EF3B1E4C637100D76ABC /* orderViewController.swift in Sources */,
 				30A5762E1E5DAEAB0056B067 /* selectionTableViewCell.swift in Sources */,
+				302BAE5C1E6073DB0024814C /* cashViewController.swift in Sources */,
 				30A5762C1E5DA46F0056B067 /* orderTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -36,4 +36,13 @@ class ViewController: UIViewController {
         statusBar.backgroundColor = UIColor.white
         
     }
+    
+    
+    override var shouldAutorotate: Bool {
+        return true
+    }
+    
+    override var supportedInterfaceOrientations:UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.landscapeRight
+    }
 }

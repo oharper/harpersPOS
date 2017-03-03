@@ -89,9 +89,6 @@ class orderViewController: UIViewController, UITabBarDelegate, UITableViewDataSo
         //Runs the method to set the font of the tab bar
         tabBarFont()
         
-        writeFirebase(child: "Carling", value: "2.40", database: database.child("Drinks").child("Beer"))
-        writeFirebase(child: "Coke", value: "1.50", database: database.child("Drinks").child("Soft"))
-        
         //Populates drinks arrays from firebase
         readFirebase()
         
@@ -110,12 +107,12 @@ class orderViewController: UIViewController, UITabBarDelegate, UITableViewDataSo
         // Dispose of any resources that can be recreated.
     }
     
-    //Function to write to firebase when given a child, value and database reference
-    func writeFirebase(child: String, value: String, database: FIRDatabaseReference) {
-        
-        database.child(child).setValue(value)
-        
-    }
+//    //Function to write to firebase when given a child, value and database reference
+//    func writeFirebase(child: String, value: String, database: FIRDatabaseReference) {
+//        
+//        database.child(child).setValue(value)
+//        
+//    }
     
     func readFirebase() {
         
@@ -214,7 +211,6 @@ class orderViewController: UIViewController, UITabBarDelegate, UITableViewDataSo
     //Method to put the data from the arrays into the tables
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
         if (tableView.tag == 0) {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! selectionTableViewCell
@@ -266,6 +262,7 @@ class orderViewController: UIViewController, UITabBarDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let toBeMoved = currentCategoryArray[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: true)
         
         if (tableView.tag == 0) {
             if checkAlreadyInOrder(toBeMoved: toBeMoved) {
@@ -293,6 +290,8 @@ class orderViewController: UIViewController, UITabBarDelegate, UITableViewDataSo
             }
         }
         else if (tableView.tag == 1) {
+            let toBeMoved = currentOrder[indexPath.row]
+            print(toBeMoved)
             let toBeMovedName = getName(item: toBeMoved)
             let toBeMovedIndex = getAlreadyInOrderIndex(itemToGet: toBeMovedName)
             var toBeMovedQuantity = Int(getQuantityDigit(item:currentOrder[toBeMovedIndex]))!

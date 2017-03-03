@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		10C840C73817FB1400C773EF /* Pods_harpersPOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9426F4D362762F0DD6EB9D5 /* Pods_harpersPOSTests.framework */; };
+		300260B11E671CC900655276 /* managerPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300260B01E671CC900655276 /* managerPasswordViewController.swift */; };
 		302BAE5A1E6051F70024814C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 302BAE591E6051F70024814C /* Assets.xcassets */; };
 		302BAE5C1E6073DB0024814C /* cashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302BAE5B1E6073DB0024814C /* cashViewController.swift */; };
 		302BAE5E1E60A1210024814C /* qrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302BAE5D1E60A1210024814C /* qrViewController.swift */; };
@@ -21,7 +22,9 @@
 		30A5762A1E5C84F40056B067 /* managerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A576291E5C84F40056B067 /* managerViewController.swift */; };
 		30A5762C1E5DA46F0056B067 /* orderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A5762B1E5DA46F0056B067 /* orderTableViewCell.swift */; };
 		30A5762E1E5DAEAB0056B067 /* selectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A5762D1E5DAEAB0056B067 /* selectionTableViewCell.swift */; };
+		30C67BE71E6451D000348655 /* tabSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C67BE61E6451D000348655 /* tabSuccessViewController.swift */; };
 		30F2EF3B1E4C637100D76ABC /* orderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F2EF3A1E4C637100D76ABC /* orderViewController.swift */; };
+		30F363051E66C8CD008FFB7D /* liveStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F363041E66C8CD008FFB7D /* liveStatsViewController.swift */; };
 		99B3D13D7EEFB188C9DB666B /* Pods_harpersPOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FD12E6305407E61107197F /* Pods_harpersPOS.framework */; };
 		D533A210ADAFE53A69406AB0 /* Pods_harpersPOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D804546EB61A777982199B31 /* Pods_harpersPOSUITests.framework */; };
 /* End PBXBuildFile section */
@@ -44,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		300260B01E671CC900655276 /* managerPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = managerPasswordViewController.swift; sourceTree = "<group>"; };
 		302BAE591E6051F70024814C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		302BAE5B1E6073DB0024814C /* cashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cashViewController.swift; sourceTree = "<group>"; };
 		302BAE5D1E60A1210024814C /* qrViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = qrViewController.swift; sourceTree = "<group>"; };
@@ -63,7 +67,9 @@
 		30A576291E5C84F40056B067 /* managerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = managerViewController.swift; sourceTree = "<group>"; };
 		30A5762B1E5DA46F0056B067 /* orderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = orderTableViewCell.swift; sourceTree = "<group>"; };
 		30A5762D1E5DAEAB0056B067 /* selectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = selectionTableViewCell.swift; sourceTree = "<group>"; };
+		30C67BE61E6451D000348655 /* tabSuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tabSuccessViewController.swift; sourceTree = "<group>"; };
 		30F2EF3A1E4C637100D76ABC /* orderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = orderViewController.swift; sourceTree = "<group>"; };
+		30F363041E66C8CD008FFB7D /* liveStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = liveStatsViewController.swift; sourceTree = "<group>"; };
 		3B70C50048FE69B0DCB4C306 /* Pods-harpersPOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-harpersPOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-harpersPOS/Pods-harpersPOS.release.xcconfig"; sourceTree = "<group>"; };
 		9B8ACB3D589F84BB6D01793E /* Pods-harpersPOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-harpersPOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-harpersPOSUITests/Pods-harpersPOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A3DDD28C50008F7B4B496978 /* Pods-harpersPOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-harpersPOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-harpersPOS/Pods-harpersPOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -128,10 +134,14 @@
 		30839A961E4A166100EFD57F /* harpersPOS */ = {
 			isa = PBXGroup;
 			children = (
+				30F363031E66C8BB008FFB7D /* After Project */,
 				30839A971E4A166100EFD57F /* AppDelegate.swift */,
+				30F363041E66C8CD008FFB7D /* liveStatsViewController.swift */,
 				30839A991E4A166100EFD57F /* ViewController.swift */,
 				30F2EF3A1E4C637100D76ABC /* orderViewController.swift */,
 				307D22971E5DB7EE00B00959 /* Main.storyboard */,
+				300260B01E671CC900655276 /* managerPasswordViewController.swift */,
+				30C67BE61E6451D000348655 /* tabSuccessViewController.swift */,
 				302BAE5D1E60A1210024814C /* qrViewController.swift */,
 				302BAE5B1E6073DB0024814C /* cashViewController.swift */,
 				30A5762D1E5DAEAB0056B067 /* selectionTableViewCell.swift */,
@@ -161,6 +171,13 @@
 				30839AB91E4A166100EFD57F /* Info.plist */,
 			);
 			path = harpersPOSUITests;
+			sourceTree = "<group>";
+		};
+		30F363031E66C8BB008FFB7D /* After Project */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "After Project";
 			sourceTree = "<group>";
 		};
 		4FFEE4B79233BCF4C9930BA0 /* Frameworks */ = {
@@ -471,10 +488,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30F363051E66C8CD008FFB7D /* liveStatsViewController.swift in Sources */,
+				300260B11E671CC900655276 /* managerPasswordViewController.swift in Sources */,
 				30A5762A1E5C84F40056B067 /* managerViewController.swift in Sources */,
 				30839A9A1E4A166100EFD57F /* ViewController.swift in Sources */,
 				30839A981E4A166100EFD57F /* AppDelegate.swift in Sources */,
 				302BAE5E1E60A1210024814C /* qrViewController.swift in Sources */,
+				30C67BE71E6451D000348655 /* tabSuccessViewController.swift in Sources */,
 				30F2EF3B1E4C637100D76ABC /* orderViewController.swift in Sources */,
 				30A5762E1E5DAEAB0056B067 /* selectionTableViewCell.swift in Sources */,
 				302BAE5C1E6073DB0024814C /* cashViewController.swift in Sources */,

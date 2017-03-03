@@ -21,6 +21,7 @@ class qrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?
     
+    
     override func viewWillAppear(_ animated: Bool) {
         captureSession?.startRunning()
         qrCodeFrameView = UIView()
@@ -107,13 +108,15 @@ class qrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
             
             if metadataObj.stringValue != nil {
                 code = metadataObj.stringValue
-                captureSession?.stopRunning()
                 if checkCodeDate(code: code) {
+                    captureSession?.stopRunning()
                     let table = code.substring(from:code.index(code.endIndex, offsetBy: -2))
                     for item in currentOrder {
                         post(drink: getName(item: item), quantity: getQuantityDigit(item: item), tableNumber: table)
                     }
-                    performSegue(withIdentifier: "qrToInitial", sender: nil)
+                    performSegue(withIdentifier: "qrToSuccess", sender: nil)
+                    
+                } else {
                     
                 }
             }
@@ -172,7 +175,6 @@ class qrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     func checkCodeDate(code: String) -> Bool {
         
         let QRDate = code.substring(to:code.index(code.startIndex, offsetBy: 8))
-        print(QRDate)
         
         if getDate() == QRDate {
             return true
@@ -216,7 +218,7 @@ class qrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         
         let databaseRef = FIRDatabase.database().reference()
         
-        databaseRef.child(getOrderDate()).child("Orders").childByAutoId().setValue(order)
+        databaseRef.child("Orders").child(String(getOrderDate())).childByAutoId().setValue(order)
         
     }
     
@@ -225,6 +227,7 @@ class qrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         database.child(child).setValue(value)
         
     }
+    
     
     func getDate() -> String {
         let date = Date()
@@ -245,7 +248,7 @@ class qrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     func getOrderDate() -> String {
         let date = Date()
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yy"
+        formatter.dateFormat = "dd|MM|yy"
         let result = formatter.string(from: date)
         return result
     }
@@ -258,5 +261,10 @@ class qrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     override var supportedInterfaceOrientations:UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.landscapeRight
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            let view : tabSuccessViewController = segue.destination as! tabSuccessViewController
+            view.tableNumber = code.substring(from:code.index(code.endIndex, offsetBy: -2))
+    }
+    
 }
-

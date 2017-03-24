@@ -53,7 +53,7 @@ class enterTableNoViewController: UIViewController {
         
         
         self.database.child("Events").child(String(eventDate + " | " + eventName)).child("Orders").child("Tab").child("Table " + self.tableField.text!).observeSingleEvent(of: .value, with: { snapshot in
-          if let result = snapshot.children.allObjects as? [FIRDataSnapshot] {
+          if snapshot.children.allObjects is [FIRDataSnapshot] {
             if snapshot.exists() {
         
       self.performSegue(withIdentifier: "enterTableToBill", sender: nil)

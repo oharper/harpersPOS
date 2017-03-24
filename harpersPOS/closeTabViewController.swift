@@ -43,7 +43,7 @@ class closeTabViewController: UIViewController {
               
               
       self.database.child("Events").child(String(eventDate + " | " + eventName)).child("Table Status").child("Table " + String(format: "%02d", tableNumber!)).observeSingleEvent(of: .value, with: { snapshot in
-        if let result = snapshot.children.allObjects as? [FIRDataSnapshot] {
+        if snapshot.children.allObjects is [FIRDataSnapshot] {
           if snapshot.exists() {
           
       

@@ -45,12 +45,30 @@ class liveStatsViewController: UIViewController, UITableViewDelegate, UITableVie
             self.openCloseButton.backgroundColor = UIColor(red:0.00, green:1.00, blue:0.50, alpha:1.0)
             self.writeFirebase(child: "Bar", value: "Open", database: FIRDatabase.database().reference().child("Status"))
             
+            
+            self.database.child("Status").observeSingleEvent(of: .value, with: { snapshot in
+              if let result = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for child in result {
+                  if child.key == "Current Event" {
+                    
+                    let currentEvent = child.value as! String
+                    
+                    
+                    
+                    let itemArray = currentEvent.components(separatedBy: ", ")
+                    let eventDate = itemArray[0]
+                    let eventName = itemArray[1]
+            
+            
             while numberOfTables > 0 {
               numberOfTables -= 1
-              self.writeFirebase(child: "Table " + String(format: "%02d", numberOfTables+1), value: "Open", database: FIRDatabase.database().reference().child("Events").child("25|03|17 | Rugby").child("Table Status"))
+              self.writeFirebase(child: "Table " + String(format: "%02d", numberOfTables+1), value: "Open", database: FIRDatabase.database().reference().child("Events").child(String(eventDate + " | " + eventName)).child("Table Status"))
             }
             
-            
+                  }
+                }
+              }
+            })
           }))
           
           // 4. Present the alert.
@@ -58,14 +76,44 @@ class liveStatsViewController: UIViewController, UITableViewDelegate, UITableVie
             
         } else {
           
-          //Code to change button to say closed and write closed, to be used when billing event?
-//            openCloseButton.setTitle("Bar Closed", for: .normal)
-//            openCloseButton.backgroundColor = UIColor(red:1.00, green:0.00, blue:0.00, alpha:1.0)
-//            writeFirebase(child: "Bar", value: "Closed", database: FIRDatabase.database().reference().child("Status"))
+          openCloseButton.setTitle("Bar Closed", for: .normal)
+          openCloseButton.backgroundColor = UIColor(red:1.00, green:0.00, blue:0.00, alpha:1.0)
+          writeFirebase(child: "Bar", value: "Closed", database: FIRDatabase.database().reference().child("Status"))
           
-        }
-        
-    }
+//          database.child("Status").observeSingleEvent(of: .value, with: { snapshot in
+//            if let result = snapshot.children.allObjects as? [FIRDataSnapshot] {
+//              for child in result {
+//                if child.key == "Current Event" {
+//                  
+//                  let currentEvent = child.value as! String
+//                  
+//                  
+//                  
+//                  let itemArray = currentEvent.components(separatedBy: ", ")
+//                  let eventDate = itemArray[0]
+//                  let eventName = itemArray[1]
+//          
+//        
+//        self.database.child("Events").child(String(eventDate + " | " + eventName)).child("Table Status").observeSingleEvent(of: .value, with: { snapshot in
+//          if snapshot.exists() {
+//            if let result = snapshot.children.allObjects as? [FIRDataSnapshot] {
+//              for child in result {
+//                self.writeFirebase(child: child.key, value: "Closed", database: FIRDatabase.database().reference().child("Events").child("25|03|17 | Rugby").child("Table Status"))
+//        
+//              }
+//            }
+//          }
+//          })
+//      }
+//      
+//    }
+//            }
+//          })
+          
+          
+          
+      }
+  }
 
     override func viewDidLoad() {
         super.viewDidLoad()

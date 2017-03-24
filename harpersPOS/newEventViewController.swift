@@ -1,15 +1,22 @@
 //
-//  managerViewController.swift
+//  newEventViewController.swift
 //  harpersPOS
 //
-//  Created by Owen Harper on 21/02/2017.
+//  Created by Owen Harper on 15/03/2017.
 //  Copyright © 2017 Owen Harper. All rights reserved.
 //
 
 import UIKit
 
-class managerViewController: UIViewController {
-
+class newEventViewController: UIViewController {
+  
+  @IBOutlet weak var eventNameField: UITextField!
+  @IBOutlet weak var eventDateField: UITextField!
+  @IBOutlet weak var eventIDField: UITextField!
+  
+  @IBOutlet weak var tableNumberField: UITextField!
+  @IBOutlet weak var tableNameField: UITextField!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -24,15 +24,17 @@ class managerPasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         codeField.becomeFirstResponder()
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    
+    //Function that compares the passcode entered in the text field when return is pressed to the passcode set on the firebase database
     
     func passcodeEntered() {
         
@@ -47,17 +49,8 @@ class managerPasswordViewController: UIViewController {
                 }
             }
         })
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

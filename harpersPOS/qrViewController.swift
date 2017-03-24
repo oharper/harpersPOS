@@ -12,16 +12,26 @@ import Firebase
 import FirebaseDatabase
 
 class qrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+  
+  let database = FIRDatabase.database().reference()
     
-    let database = FIRDatabase.database().reference()
     var currentOrder: [String] = []
     
     var code: String = ""
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?
-    
-    
+    var subTotal: Double = 0
+  
+  
+  @IBOutlet weak var backButton: UIButton!
+  
+  @IBAction func backPressed(_ sender: Any) {
+    captureSession?.stopRunning()
+    performSegue(withIdentifier: "qrBack", sender: nil)
+  }
+  
+  
     override func viewWillAppear(_ animated: Bool) {
         captureSession?.startRunning()
         qrCodeFrameView = UIView()
@@ -30,7 +40,6 @@ class qrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
         
         // Get an instance of the AVCaptureDevice class to initialize a device object and provide the video as the media type parameter.
         let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
@@ -59,10 +68,6 @@ class qrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
             videoPreviewLayer?.frame = view.layer.bounds
             view.layer.addSublayer(videoPreviewLayer!)
             
-            //here
-            
-            
-            
             // Start video capture.
             captureSession?.startRunning()
             
@@ -81,7 +86,7 @@ class qrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
             print(error)
             return
         }
-        
+        self.view.bringSubview(toFront: backButton)
     }
     
     override func didReceiveMemoryWarning() {
@@ -108,22 +113,15 @@ class qrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
             
             if metadataObj.stringValue != nil {
                 code = metadataObj.stringValue
-                if checkCodeDate(code: code) {
-                    captureSession?.stopRunning()
-                    let table = code.substring(from:code.index(code.endIndex, offsetBy: -2))
-                    for item in currentOrder {
-                        post(drink: getName(item: item), quantity: getQuantityDigit(item: item), tableNumber: table)
-                    }
-                    performSegue(withIdentifier: "qrToSuccess", sender: nil)
-                    
-                } else {
-                    
-                }
+              
+              self.captureSession?.stopRunning()
+              segueIfValid(code: code)
+
             }
         }
     }
     
-    ///Methods to Rotate Camera
+    ///Methods to Rotate Camera IS IT NEEDED?
     private func updatePreviewLayer(layer: AVCaptureConnection, orientation: AVCaptureVideoOrientation) {
         
         layer.videoOrientation = orientation
@@ -141,11 +139,11 @@ class qrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
             
             //was = currentDevice.orientation, change to .landscapeLeft to force orientation
             let orientation: UIDeviceOrientation = .landscapeLeft
-            
+          
             let previewLayerConnection : AVCaptureConnection = connection
             
             if previewLayerConnection.isVideoOrientationSupported {
-                
+              
                 switch (orientation) {
                 case .portrait: updatePreviewLayer(layer: previewLayerConnection, orientation: .portrait)
                 
@@ -171,61 +169,76 @@ class qrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         }
     }
     //End of Methods to rotate camera
-    
-    func checkCodeDate(code: String) -> Bool {
-        
-        let QRDate = code.substring(to:code.index(code.startIndex, offsetBy: 8))
-        
-        if getDate() == QRDate {
-            return true
-        } else {
-            return false
+  
+  
+    func segueIfValid(code: String) {
+      
+      let tableNumber = code.substring(from:code.index(code.endIndex, offsetBy: -2))
+      
+      database.child("Status").observeSingleEvent(of: .value, with: { snapshot in
+        if let result = snapshot.children.allObjects as? [FIRDataSnapshot] {
+          for child in result {
+            if child.key == "Current Event" {
+              
+              let currentEvent = child.value as! String
+              
+              let itemArray = currentEvent.components(separatedBy: ", ")
+              let eventDate = itemArray[0]
+              let eventName = itemArray[1]
+              let eventID = itemArray[2]
+              
+      let codeID = code.substring(to:code.index(code.startIndex, offsetBy: 8))
+              
+              if codeID == eventID {
+                
+                
+                self.database.child("Events").child(String(eventDate + " | " + eventName)).child("Table Status").observeSingleEvent(of: .value, with: { snapshot in
+                  if let result = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                    for child in result {
+                      if child.key == "Table " + tableNumber {
+                        if String(describing: child.value!) == "Open" {
+                          
+                          print("Run")
+                          self.performSegue(withIdentifier: "qrToSuccess", sender: nil)
+                          
+                        } else {
+                          
+                          let alert = UIAlertController(title: "Table " + tableNumber + " Closed", message: "The tab for this table has been closed.", preferredStyle: .alert)
+                          
+                          let clearAction = UIAlertAction(title: "Back", style: .default) { (alert: UIAlertAction!) -> Void in
+                            self.performSegue(withIdentifier: "qrBack", sender: nil)
+                          }
+                          
+                          alert.addAction(clearAction)
+                          
+                          self.present(alert, animated: true, completion:nil)
+                          
+                        }
+                        
+                      }
+                    }
+                  }
+                })
+              } else {
+                
+                let alert = UIAlertController(title: "Invalid QR", message: "This code is either from another past event or is invalid", preferredStyle: .alert)
+                
+                let clearAction = UIAlertAction(title: "Back", style: .default) { (alert: UIAlertAction!) -> Void in
+                  self.performSegue(withIdentifier: "qrBack", sender: nil)
+                }
+                
+                alert.addAction(clearAction)
+                
+                self.present(alert, animated: true, completion:nil)
+                
+              }
+              
+            }
+            
+          }
         }
-        
-    }
-    
-    
-    func getName(item: String) -> String {
-        
-        let itemArray = item.components(separatedBy: ", ")
-        let name = itemArray[0]
-        return name
-    }
-    
-    func getPrice(item: String) -> String {
-        
-        let itemArray = item.components(separatedBy: ", ")
-        let price = itemArray[1]
-        return price
-    }
-    
-    func getQuantityDigit(item: String) -> String {
-        
-        let itemArray = item.components(separatedBy: ", ")
-        let quantity = itemArray[2]
-        return quantity
-    }
-    
-    
-    func post(drink: String, quantity: String, tableNumber: String){
-        
-        let time = getTime()
-        let table = tableNumber
-        let drink = drink
-        let quantity = quantity
-        
-        let order : [String : String] = ["Time" : time, "Table" : table, "Drink" : drink, "Quantity" : quantity]
-        
-        let databaseRef = FIRDatabase.database().reference()
-        
-        databaseRef.child("Orders").child(String(getOrderDate())).childByAutoId().setValue(order)
-        
-    }
-    
-    func writeFirebase(child: String, value: String, database: FIRDatabaseReference) {
-        
-        database.child(child).setValue(value)
-        
+      })
+      
     }
     
     
@@ -237,34 +250,30 @@ class qrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         return result
     }
     
-    func getTime() -> String {
-        let date = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm:ss"
-        let result = formatter.string(from: date)
-        return result
-    }
-    
-    func getOrderDate() -> String {
-        let date = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd|MM|yy"
-        let result = formatter.string(from: date)
-        return result
-    }
-    
-    
-    override var shouldAutorotate: Bool {
-        return true
-    }
-    
-    override var supportedInterfaceOrientations:UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.landscapeRight
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "qrToSuccess") {
             let view : tabSuccessViewController = segue.destination as! tabSuccessViewController
             view.tableNumber = code.substring(from:code.index(code.endIndex, offsetBy: -2))
+            view.currentOrder = currentOrder
+            view.subTotal = subTotal
+        }
+        if (segue.identifier == "qrBack") {
+            let view: orderViewController = segue.destination as! orderViewController
+            view.currentOrder = currentOrder
+            view.subTotal = subTotal
+        }
     }
-    
+  
+  
+  override var shouldAutorotate: Bool {
+    return true
+  }
+  
+  
+  override var supportedInterfaceOrientations:UIInterfaceOrientationMask {
+    return UIInterfaceOrientationMask.landscapeRight
+  }
+  
+  
 }

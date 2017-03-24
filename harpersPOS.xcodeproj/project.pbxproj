@@ -9,20 +9,24 @@
 /* Begin PBXBuildFile section */
 		10C840C73817FB1400C773EF /* Pods_harpersPOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9426F4D362762F0DD6EB9D5 /* Pods_harpersPOSTests.framework */; };
 		300260B11E671CC900655276 /* managerPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300260B01E671CC900655276 /* managerPasswordViewController.swift */; };
+		301EAC7A1E6A1940007DD027 /* paymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EAC791E6A1940007DD027 /* paymentViewController.swift */; };
 		302BAE5A1E6051F70024814C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 302BAE591E6051F70024814C /* Assets.xcassets */; };
-		302BAE5C1E6073DB0024814C /* cashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302BAE5B1E6073DB0024814C /* cashViewController.swift */; };
 		302BAE5E1E60A1210024814C /* qrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302BAE5D1E60A1210024814C /* qrViewController.swift */; };
 		303913CB1E531338000D24AD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 303913CA1E531338000D24AD /* GoogleService-Info.plist */; };
+		3040B7E01E7B3DBD009CBA1B /* closeTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3040B7DF1E7B3DBD009CBA1B /* closeTabViewController.swift */; };
+		3040B7E21E7BD092009CBA1B /* billEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3040B7E11E7BD092009CBA1B /* billEventViewController.swift */; };
+		305FB4921E77E5220017E521 /* tableSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305FB4911E77E5220017E521 /* tableSummaryViewController.swift */; };
+		305FB4941E794E9D0017E521 /* newEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305FB4931E794E9D0017E521 /* newEventViewController.swift */; };
 		307D22991E5DB7EE00B00959 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307D22971E5DB7EE00B00959 /* Main.storyboard */; };
 		30839A981E4A166100EFD57F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30839A971E4A166100EFD57F /* AppDelegate.swift */; };
 		30839A9A1E4A166100EFD57F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30839A991E4A166100EFD57F /* ViewController.swift */; };
 		30839AA21E4A166100EFD57F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30839AA01E4A166100EFD57F /* LaunchScreen.storyboard */; };
 		30839AAD1E4A166100EFD57F /* harpersPOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30839AAC1E4A166100EFD57F /* harpersPOSTests.swift */; };
 		30839AB81E4A166100EFD57F /* harpersPOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30839AB71E4A166100EFD57F /* harpersPOSUITests.swift */; };
-		30A5762A1E5C84F40056B067 /* managerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A576291E5C84F40056B067 /* managerViewController.swift */; };
 		30A5762C1E5DA46F0056B067 /* orderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A5762B1E5DA46F0056B067 /* orderTableViewCell.swift */; };
 		30A5762E1E5DAEAB0056B067 /* selectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A5762D1E5DAEAB0056B067 /* selectionTableViewCell.swift */; };
 		30C67BE71E6451D000348655 /* tabSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C67BE61E6451D000348655 /* tabSuccessViewController.swift */; };
+		30DC36141E70225B00BD1636 /* enterTableNoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DC36131E70225B00BD1636 /* enterTableNoViewController.swift */; };
 		30F2EF3B1E4C637100D76ABC /* orderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F2EF3A1E4C637100D76ABC /* orderViewController.swift */; };
 		30F363051E66C8CD008FFB7D /* liveStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F363041E66C8CD008FFB7D /* liveStatsViewController.swift */; };
 		99B3D13D7EEFB188C9DB666B /* Pods_harpersPOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FD12E6305407E61107197F /* Pods_harpersPOS.framework */; };
@@ -48,10 +52,14 @@
 
 /* Begin PBXFileReference section */
 		300260B01E671CC900655276 /* managerPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = managerPasswordViewController.swift; sourceTree = "<group>"; };
+		301EAC791E6A1940007DD027 /* paymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = paymentViewController.swift; sourceTree = "<group>"; };
 		302BAE591E6051F70024814C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		302BAE5B1E6073DB0024814C /* cashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cashViewController.swift; sourceTree = "<group>"; };
 		302BAE5D1E60A1210024814C /* qrViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = qrViewController.swift; sourceTree = "<group>"; };
 		303913CA1E531338000D24AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3040B7DF1E7B3DBD009CBA1B /* closeTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = closeTabViewController.swift; sourceTree = "<group>"; };
+		3040B7E11E7BD092009CBA1B /* billEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = billEventViewController.swift; sourceTree = "<group>"; };
+		305FB4911E77E5220017E521 /* tableSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tableSummaryViewController.swift; sourceTree = "<group>"; };
+		305FB4931E794E9D0017E521 /* newEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newEventViewController.swift; sourceTree = "<group>"; };
 		307D22981E5DB7EE00B00959 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		30839A941E4A166100EFD57F /* harpersPOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = harpersPOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30839A971E4A166100EFD57F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,10 +72,10 @@
 		30839AB31E4A166100EFD57F /* harpersPOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = harpersPOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30839AB71E4A166100EFD57F /* harpersPOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = harpersPOSUITests.swift; sourceTree = "<group>"; };
 		30839AB91E4A166100EFD57F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		30A576291E5C84F40056B067 /* managerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = managerViewController.swift; sourceTree = "<group>"; };
 		30A5762B1E5DA46F0056B067 /* orderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = orderTableViewCell.swift; sourceTree = "<group>"; };
 		30A5762D1E5DAEAB0056B067 /* selectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = selectionTableViewCell.swift; sourceTree = "<group>"; };
 		30C67BE61E6451D000348655 /* tabSuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tabSuccessViewController.swift; sourceTree = "<group>"; };
+		30DC36131E70225B00BD1636 /* enterTableNoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enterTableNoViewController.swift; sourceTree = "<group>"; };
 		30F2EF3A1E4C637100D76ABC /* orderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = orderViewController.swift; sourceTree = "<group>"; };
 		30F363041E66C8CD008FFB7D /* liveStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = liveStatsViewController.swift; sourceTree = "<group>"; };
 		3B70C50048FE69B0DCB4C306 /* Pods-harpersPOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-harpersPOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-harpersPOS/Pods-harpersPOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -136,17 +144,11 @@
 			children = (
 				30F363031E66C8BB008FFB7D /* After Project */,
 				30839A971E4A166100EFD57F /* AppDelegate.swift */,
-				30F363041E66C8CD008FFB7D /* liveStatsViewController.swift */,
 				30839A991E4A166100EFD57F /* ViewController.swift */,
-				30F2EF3A1E4C637100D76ABC /* orderViewController.swift */,
+				3040B7DF1E7B3DBD009CBA1B /* closeTabViewController.swift */,
+				3095BDF91E71A0E80080D84E /* Manager Login */,
+				3095BDFA1E71A14C0080D84E /* Orders */,
 				307D22971E5DB7EE00B00959 /* Main.storyboard */,
-				300260B01E671CC900655276 /* managerPasswordViewController.swift */,
-				30C67BE61E6451D000348655 /* tabSuccessViewController.swift */,
-				302BAE5D1E60A1210024814C /* qrViewController.swift */,
-				302BAE5B1E6073DB0024814C /* cashViewController.swift */,
-				30A5762D1E5DAEAB0056B067 /* selectionTableViewCell.swift */,
-				30A5762B1E5DA46F0056B067 /* orderTableViewCell.swift */,
-				30A576291E5C84F40056B067 /* managerViewController.swift */,
 				302BAE591E6051F70024814C /* Assets.xcassets */,
 				30839AA01E4A166100EFD57F /* LaunchScreen.storyboard */,
 				30839AA31E4A166100EFD57F /* Info.plist */,
@@ -171,6 +173,40 @@
 				30839AB91E4A166100EFD57F /* Info.plist */,
 			);
 			path = harpersPOSUITests;
+			sourceTree = "<group>";
+		};
+		3095BDF91E71A0E80080D84E /* Manager Login */ = {
+			isa = PBXGroup;
+			children = (
+				300260B01E671CC900655276 /* managerPasswordViewController.swift */,
+				30F363041E66C8CD008FFB7D /* liveStatsViewController.swift */,
+				30DC36131E70225B00BD1636 /* enterTableNoViewController.swift */,
+				305FB4911E77E5220017E521 /* tableSummaryViewController.swift */,
+				305FB4931E794E9D0017E521 /* newEventViewController.swift */,
+				3040B7E11E7BD092009CBA1B /* billEventViewController.swift */,
+			);
+			name = "Manager Login";
+			sourceTree = "<group>";
+		};
+		3095BDFA1E71A14C0080D84E /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				30F2EF3A1E4C637100D76ABC /* orderViewController.swift */,
+				301EAC791E6A1940007DD027 /* paymentViewController.swift */,
+				302BAE5D1E60A1210024814C /* qrViewController.swift */,
+				30C67BE61E6451D000348655 /* tabSuccessViewController.swift */,
+				3095BDFB1E71A1670080D84E /* Cells */,
+			);
+			name = Orders;
+			sourceTree = "<group>";
+		};
+		3095BDFB1E71A1670080D84E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				30A5762D1E5DAEAB0056B067 /* selectionTableViewCell.swift */,
+				30A5762B1E5DA46F0056B067 /* orderTableViewCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		30F363031E66C8BB008FFB7D /* After Project */ = {
@@ -490,14 +526,18 @@
 			files = (
 				30F363051E66C8CD008FFB7D /* liveStatsViewController.swift in Sources */,
 				300260B11E671CC900655276 /* managerPasswordViewController.swift in Sources */,
-				30A5762A1E5C84F40056B067 /* managerViewController.swift in Sources */,
+				30DC36141E70225B00BD1636 /* enterTableNoViewController.swift in Sources */,
+				301EAC7A1E6A1940007DD027 /* paymentViewController.swift in Sources */,
+				305FB4921E77E5220017E521 /* tableSummaryViewController.swift in Sources */,
 				30839A9A1E4A166100EFD57F /* ViewController.swift in Sources */,
 				30839A981E4A166100EFD57F /* AppDelegate.swift in Sources */,
 				302BAE5E1E60A1210024814C /* qrViewController.swift in Sources */,
 				30C67BE71E6451D000348655 /* tabSuccessViewController.swift in Sources */,
+				305FB4941E794E9D0017E521 /* newEventViewController.swift in Sources */,
 				30F2EF3B1E4C637100D76ABC /* orderViewController.swift in Sources */,
+				3040B7E21E7BD092009CBA1B /* billEventViewController.swift in Sources */,
+				3040B7E01E7B3DBD009CBA1B /* closeTabViewController.swift in Sources */,
 				30A5762E1E5DAEAB0056B067 /* selectionTableViewCell.swift in Sources */,
-				302BAE5C1E6073DB0024814C /* cashViewController.swift in Sources */,
 				30A5762C1E5DA46F0056B067 /* orderTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -577,6 +617,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 953KR5WRL4;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -624,9 +665,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 953KR5WRL4;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -651,6 +694,7 @@
 			baseConfigurationReference = A3DDD28C50008F7B4B496978 /* Pods-harpersPOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = FS4R4RGBU3;
 				INFOPLIST_FILE = harpersPOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -666,6 +710,7 @@
 			baseConfigurationReference = 3B70C50048FE69B0DCB4C306 /* Pods-harpersPOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = FS4R4RGBU3;
 				INFOPLIST_FILE = harpersPOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;

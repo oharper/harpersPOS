@@ -14,6 +14,7 @@ class enterTableNoViewController: UIViewController {
   
   let database = FIRDatabase.database().reference()
   var numberOfTables = 0
+  var cashBool: Bool = false
 
   @IBOutlet weak var currentEventLabel: UILabel!
   
@@ -30,6 +31,11 @@ class enterTableNoViewController: UIViewController {
     }
     
     @IBOutlet weak var tableField: UITextField!
+
+  @IBAction func cashPressed(_ sender: Any) {
+    cashBool = true
+    self.performSegue(withIdentifier: "enterTableToBill", sender: nil)
+  }
 
     @IBAction func keyboardGoPressed(_ sender: Any) {
       
@@ -60,15 +66,18 @@ class enterTableNoViewController: UIViewController {
             }
             else {
               
-              let alert = UIAlertController(title: "No Data for Table", message: "This table either does not exist or has not put anything on there tab.", preferredStyle: .alert)
+              self.performSegue(withIdentifier: "enterTableToBill", sender: nil)
               
-              let tryAgain = UIAlertAction(title: "OK", style: .default) { (alert: UIAlertAction!) -> Void in
-                self.tableField.text = ""
-              }
-              
-              alert.addAction(tryAgain)
-              
-              self.present(alert, animated: true, completion:nil)
+              //code to reject if the table has no values
+//              let alert = UIAlertController(title: "No Data for Table", message: "This table either does not exist or has not put anything on there tab.", preferredStyle: .alert)
+//              
+//              let tryAgain = UIAlertAction(title: "OK", style: .default) { (alert: UIAlertAction!) -> Void in
+//                self.tableField.text = ""
+//              }
+//              
+//              alert.addAction(tryAgain)
+//              
+//              self.present(alert, animated: true, completion:nil)
               
               
             }
@@ -104,7 +113,11 @@ class enterTableNoViewController: UIViewController {
     if (segue.identifier == "enterTableToBill") {
       let view : billEventViewController = segue.destination as! billEventViewController;
       view.currentEvent = currentEventLabel.text!
+      if tableField.text == "" {
+      } else {
       view.currentTable = Int(tableField.text!)!
+      }
+      view.cashBool = cashBool
     }
   }
 

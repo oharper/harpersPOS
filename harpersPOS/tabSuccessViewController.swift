@@ -22,6 +22,7 @@ class tabSuccessViewController: UIViewController, UITableViewDataSource, UITable
   }
   
   @IBAction func confirmPressed(_ sender: Any) {
+    
     takeScreenShot()
     
     let uniqueID = UUID().uuidString
@@ -201,9 +202,9 @@ class tabSuccessViewController: UIViewController, UITableViewDataSource, UITable
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "orderCell", for: indexPath) as! orderTableViewCell
     
-    cell.nameLabel.text = getName(item: currentOrder[indexPath.row]) + " x " + getQuantityDigit(item: currentOrder[indexPath.row])
+    cell.nameLabel.text = getName(item: currentOrder[indexPath.row])
     
-    cell.singlePriceLabel.text = "£" + getPrice(item: currentOrder[indexPath.row])
+    cell.singlePriceLabel.text = "£" + getPrice(item: currentOrder[indexPath.row]) + " x " + getQuantityDigit(item: currentOrder[indexPath.row])
     
     let quantityPrice = Double(getQuantityDigit(item: currentOrder[indexPath.row]))! * Double(getPrice(item: currentOrder[indexPath.row]))!
     cell.quantityPriceLabel.text = "£" + String(format:"%.2f", quantityPrice)

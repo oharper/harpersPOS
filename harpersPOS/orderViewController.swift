@@ -28,6 +28,10 @@ class orderViewController: UIViewController, UITabBarDelegate, UITableViewDataSo
   var spiritsArray: [String] = []
   var softArray: [String] = []
   var otherArray: [String] = []
+  var whiteArray: [String] = []
+  var redArray: [String] = []
+  var roseArray: [String] = []
+  var champagneArray: [String] = []
   
   
   override func viewDidLoad() {
@@ -144,8 +148,20 @@ class orderViewController: UIViewController, UITabBarDelegate, UITableViewDataSo
                   let orderName = child.key
                   let orderPrice = child.value as! String
                   
+                  if orderName.contains("Red"){
+                    self.redArray.append(orderName + ", " + orderPrice)
+                    
+                  } else if orderName.contains("Rose") {
+                    self.roseArray.append(orderName + ", " + orderPrice)
+                  }
+                  else if orderName.contains("White") {
+                    self.whiteArray.append(orderName + ", " + orderPrice)
+                  }
+                  else {
+                    self.champagneArray.append(orderName + ", " + orderPrice)
+                  }
                   
-                  self.spiritsArray.append(orderName + ", " + orderPrice)
+                  self.spiritsArray = self.redArray + self.roseArray + self.whiteArray + self.champagneArray
                   self.currentCategoryArray = self.beerArray
                   self.drinksTable.reloadData()
                   
@@ -249,6 +265,16 @@ class orderViewController: UIViewController, UITabBarDelegate, UITableViewDataSo
       let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! selectionTableViewCell
       
       cell.selectionNameLabel.text = getName(item: currentCategoryArray[indexPath.row])
+      
+//      if getName(item: currentCategoryArray[indexPath.row]).contains("Red") {
+//        cell.backgroundColor = .red
+//      } else if getName(item: currentCategoryArray[indexPath.row]).contains("Rose"){
+//        cell.backgroundColor = .magenta
+//      } else if getName(item: currentCategoryArray[indexPath.row]).contains("White"){
+//        cell.backgroundColor = .yellow
+//      } else {
+//        cell.backgroundColor = .white
+//      }
       
       cell.selectionPriceLabel.text = "£" + getPrice(item: currentCategoryArray[indexPath.row])
       

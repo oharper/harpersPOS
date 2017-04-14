@@ -13,18 +13,14 @@ import FirebaseDatabase
 class ViewController: UIViewController {
   
   let database = FIRDatabase.database().reference()
-  let barStatus = ""
-  
   
   override func viewDidLoad() {
     super.viewDidLoad()
   }
   
-  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
-  
   
   //When the new order button is pressed, this runs the segueIfBarOpen function
   
@@ -32,18 +28,21 @@ class ViewController: UIViewController {
     segueIfBarOpen()
   }
   
-  
   //Function that checks with the firebase database the status of the bar (open or closed), If open, segues to the new order screen, if closed; displays an alert. Also tests for connection to firebase and displays an alert if no connection.
+  
   func segueIfBarOpen() {
     
     let connectedRef = FIRDatabase.database().reference(withPath: ".info/connected")
     connectedRef.observe(.value, with: { snapshot in
+      
       if let connected = snapshot.value as? Bool, connected {
         
-        
         self.database.child("Status").observeSingleEvent(of: .value, with: { snapshot in
+          
           if let result = snapshot.children.allObjects as? [FIRDataSnapshot] {
+            
             for child in result {
+              
               if child.value as! String == "Open" {
                 
                 self.performSegue(withIdentifier: "initialToOrder", sender: nil)
@@ -68,6 +67,7 @@ class ViewController: UIViewController {
         
         let alert = UIAlertController(title: "No Connection", message: "Please check internet connection and try again.", preferredStyle: .alert)
         let clearAction = UIAlertAction(title: "Ok", style: .default) { (alert: UIAlertAction!) -> Void in
+          
         }
         
         alert.addAction(clearAction)

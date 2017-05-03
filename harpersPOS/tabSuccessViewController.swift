@@ -27,8 +27,6 @@ class tabSuccessViewController: UIViewController, UITableViewDataSource, UITable
     
     let uniqueID = UUID().uuidString
     
-//    readCurrentEvent()
-    
     postTimeTotal(total: subTotal, uniqueID: uniqueID)
     
     for item in currentOrder {
@@ -75,28 +73,6 @@ class tabSuccessViewController: UIViewController, UITableViewDataSource, UITable
     
   }
   
-//  func readCurrentEvent() {
-//    
-//    database.child("Status").observeSingleEvent(of: .value, with: { snapshot in
-//      if let result = snapshot.children.allObjects as? [FIRDataSnapshot] {
-//        for child in result {
-//          if child.key == "Current Event" {
-//            
-//            let currentEvent = child.value as! String
-//            
-//            let itemArray = currentEvent.components(separatedBy: ", ")
-//            print(itemArray)
-//            let eventDate = itemArray[0]
-//            let eventName = itemArray[1]
-//            let eventID = itemArray[2]
-//            
-//          }
-//        }
-//      }
-//    })
-//    
-//  }
-  
   func post(drink: String, quantity: String, tableNumber: String, uniqueID: String, itemPrice: String){
     
     database.child("Status").observeSingleEvent(of: .value, with: { snapshot in
@@ -111,14 +87,6 @@ class tabSuccessViewController: UIViewController, UITableViewDataSource, UITable
             let eventName = itemArray[1]
             
             self.database.child("Events").child(String(eventDate + " | " + eventName)).child("Orders").child("Tab").child("Table " + tableNumber).child(self.getTime() + " | " + uniqueID).child(drink + " x " + quantity).setValue("£" + String(format:"%.2f", Double(itemPrice)!*Double(quantity)!))
-            
-//            self.database.child("Events").child(String(eventDate + " | " + eventName)).child("Orders").child("Tab").child("Table " + tableNumber).child(self.getTime() + " | " + uniqueID).setValue("£" + String(format:"%.2f", Double(self.subTotal)))
-            
-            
-            
-            
-            
-            
             
           }
         }
@@ -141,9 +109,9 @@ class tabSuccessViewController: UIViewController, UITableViewDataSource, UITable
             let itemArray = currentEvent.components(separatedBy: ", ")
             let eventDate = itemArray[0]
             let eventName = itemArray[1]
-    
-    let order : [String : String] = ["Order Total" : "£" + String(format:"%.2f", total)]
-    self.database.child("Events").child(String(eventDate + " | " + eventName)).child("Orders").child("Tab").child("Table " + self.tableNumber).child(self.getTime() + " | " + uniqueID).setValue(order)
+            
+            let order : [String : String] = ["Order Total" : "£" + String(format:"%.2f", total)]
+            self.database.child("Events").child(String(eventDate + " | " + eventName)).child("Orders").child("Tab").child("Table " + self.tableNumber).child(self.getTime() + " | " + uniqueID).setValue(order)
             
           }
         }
@@ -164,34 +132,28 @@ class tabSuccessViewController: UIViewController, UITableViewDataSource, UITable
             let itemArray = currentEvent.components(separatedBy: ", ")
             let eventDate = itemArray[0]
             let eventName = itemArray[1]
-    
-    
-    self.database.child("Events").child(String(eventDate + " | " + eventName)).child("Orders").child("Tab").child("Totals").child("Table " + tableNumber).child(drink).observeSingleEvent(of: .value, with: { snapshot in
-      
-      if snapshot.exists() {
-        if snapshot.key == drink {
-          let existingQuantity = String(describing: snapshot.value!)
-          let quantityToAdd = Int(quantity)!
-          let newQuantity = quantityToAdd + Int(existingQuantity)!
-          self.database.child("Events").child(String(eventDate + " | " + eventName)).child("Orders").child("Tab").child("Totals").child("Table " + tableNumber).child(drink).setValue(newQuantity)
-        }
-      }
-      else {
-        self.database.child("Events").child(String(eventDate + " | " + eventName)).child("Orders").child("Tab").child("Totals").child("Table " + tableNumber).child(drink).setValue(Int(quantity))
-      }
-    })
-           
+            
+            
+            self.database.child("Events").child(String(eventDate + " | " + eventName)).child("Orders").child("Tab").child("Totals").child("Table " + tableNumber).child(drink).observeSingleEvent(of: .value, with: { snapshot in
+              
+              if snapshot.exists() {
+                if snapshot.key == drink {
+                  let existingQuantity = String(describing: snapshot.value!)
+                  let quantityToAdd = Int(quantity)!
+                  let newQuantity = quantityToAdd + Int(existingQuantity)!
+                  self.database.child("Events").child(String(eventDate + " | " + eventName)).child("Orders").child("Tab").child("Totals").child("Table " + tableNumber).child(drink).setValue(newQuantity)
+                }
+              }
+              else {
+                self.database.child("Events").child(String(eventDate + " | " + eventName)).child("Orders").child("Tab").child("Totals").child("Table " + tableNumber).child(drink).setValue(Int(quantity))
+              }
+            })
+            
           }
         }
       }
     })
     
-    
-    
-    
-    
-    
-            
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -238,14 +200,6 @@ class tabSuccessViewController: UIViewController, UITableViewDataSource, UITable
     let date = Date()
     let formatter = DateFormatter()
     formatter.dateFormat = "HH:mm:ss"
-    let result = formatter.string(from: date)
-    return result
-  }
-  
-  func getOrderDate() -> String {
-    let date = Date()
-    let formatter = DateFormatter()
-    formatter.dateFormat = "dd|MM|yy"
     let result = formatter.string(from: date)
     return result
   }

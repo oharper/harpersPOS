@@ -15,7 +15,6 @@ class orderViewController: UIViewController, UITabBarDelegate, UITableViewDataSo
   let database = FIRDatabase.database().reference()
   var leftTableCount: Int = 0
   var rightTableCount: Int = 0
-  var orderValue: String = ""
   var isInOrder: Bool = false
   var alreadyInOrderIndex: Int = 0
   var subTotal: Double = 0
@@ -28,10 +27,6 @@ class orderViewController: UIViewController, UITabBarDelegate, UITableViewDataSo
   var spiritsArray: [String] = []
   var softArray: [String] = []
   var otherArray: [String] = []
-  var whiteArray: [String] = []
-  var redArray: [String] = []
-  var roseArray: [String] = []
-  var champagneArray: [String] = []
   
   
   override func viewDidLoad() {
@@ -50,7 +45,7 @@ class orderViewController: UIViewController, UITabBarDelegate, UITableViewDataSo
     tabBar.selectedItem = (tabBar.items?[0])! as UITabBarItem;
     
     //Loads the table with the default beer array
-    currentCategoryArray = beerArray
+    currentCategoryArray = wineArray
     
   }
   
@@ -148,20 +143,7 @@ class orderViewController: UIViewController, UITabBarDelegate, UITableViewDataSo
                   let orderName = child.key
                   let orderPrice = child.value as! String
                   
-                  if orderName.contains("Red"){
-                    self.redArray.append(orderName + ", " + orderPrice)
-                    
-                  } else if orderName.contains("Rose") {
-                    self.roseArray.append(orderName + ", " + orderPrice)
-                  }
-                  else if orderName.contains("White") {
-                    self.whiteArray.append(orderName + ", " + orderPrice)
-                  }
-                  else {
-                    self.champagneArray.append(orderName + ", " + orderPrice)
-                  }
-                  
-                  self.spiritsArray = self.redArray + self.roseArray + self.whiteArray + self.champagneArray
+                  self.spiritsArray.append(orderName + ", " + orderPrice)
                   self.currentCategoryArray = self.beerArray
                   self.drinksTable.reloadData()
                   
@@ -216,7 +198,6 @@ class orderViewController: UIViewController, UITabBarDelegate, UITableViewDataSo
     
   }
   
-  
   //Function to get the price of an array item, or otherwise the string after the first comma
   
   func getPrice(item: String) -> String {
@@ -265,16 +246,6 @@ class orderViewController: UIViewController, UITabBarDelegate, UITableViewDataSo
       let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! selectionTableViewCell
       
       cell.selectionNameLabel.text = getName(item: currentCategoryArray[indexPath.row])
-      
-//      if getName(item: currentCategoryArray[indexPath.row]).contains("Red") {
-//        cell.backgroundColor = .red
-//      } else if getName(item: currentCategoryArray[indexPath.row]).contains("Rose"){
-//        cell.backgroundColor = .magenta
-//      } else if getName(item: currentCategoryArray[indexPath.row]).contains("White"){
-//        cell.backgroundColor = .yellow
-//      } else {
-//        cell.backgroundColor = .white
-//      }
       
       cell.selectionPriceLabel.text = "£" + getPrice(item: currentCategoryArray[indexPath.row])
       
@@ -404,7 +375,6 @@ class orderViewController: UIViewController, UITabBarDelegate, UITableViewDataSo
     case 4:
       addOther()
       tabBar.selectedItem = (tabBar.items?[0])! as UITabBarItem;
-//      currentCategoryArray = otherArray
     default:
       break
     }
@@ -443,7 +413,7 @@ class orderViewController: UIViewController, UITabBarDelegate, UITableViewDataSo
       self.subTotal = self.subTotal + Double(price)!
       self.subTotalLabel.text = "Sub Total: £" + String(format:"%.2f", self.subTotal)
       self.orderTable.reloadData()
-      }))
+    }))
     
     
     

@@ -149,11 +149,11 @@ class paymentViewController: UIViewController {
             let itemArray = currentEvent.components(separatedBy: ", ")
             let eventDate = itemArray[0]
             let eventName = itemArray[1]
-    
-    
-    
-    self.database.child("Events").child(String(eventDate + " | " + eventName)).child("Orders").child("Cash|Card").child(self.getTime() + " | " + uniqueID).child(drink + " x " + quantity).setValue("£" + String(format:"%.2f", Double(itemPrice)!*Double(quantity)!))
-    
+            
+            
+            
+            self.database.child("Events").child(String(eventDate + " | " + eventName)).child("Orders").child("Cash|Card").child(self.getTime() + " | " + uniqueID).child(drink + " x " + quantity).setValue("£" + String(format:"%.2f", Double(itemPrice)!*Double(quantity)!))
+            
           }
         }
       }
@@ -176,10 +176,10 @@ class paymentViewController: UIViewController {
             let eventDate = itemArray[0]
             let eventName = itemArray[1]
             
-    
-    let order : [String : String] = ["Order Total" : "£" + String(format:"%.2f", total), "Paid By" : self.cashOrCard]
-    self.database.child("Events").child(String(eventDate + " | " + eventName)).child("Orders").child("Cash|Card").child(self.getTime() + " | " + uniqueID).setValue(order)
-    
+            
+            let order : [String : String] = ["Order Total" : "£" + String(format:"%.2f", total), "Paid By" : self.cashOrCard]
+            self.database.child("Events").child(String(eventDate + " | " + eventName)).child("Orders").child("Cash|Card").child(self.getTime() + " | " + uniqueID).setValue(order)
+            
             
           }
         }
@@ -224,10 +224,6 @@ class paymentViewController: UIViewController {
       }
     })
   }
-  
-  
-  
-  
   
   
   func getTime() -> String {

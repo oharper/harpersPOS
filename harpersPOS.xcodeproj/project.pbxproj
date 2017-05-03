@@ -15,8 +15,6 @@
 		303913CB1E531338000D24AD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 303913CA1E531338000D24AD /* GoogleService-Info.plist */; };
 		3040B7E01E7B3DBD009CBA1B /* closeTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3040B7DF1E7B3DBD009CBA1B /* closeTabViewController.swift */; };
 		3040B7E21E7BD092009CBA1B /* billEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3040B7E11E7BD092009CBA1B /* billEventViewController.swift */; };
-		305FB4921E77E5220017E521 /* tableSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305FB4911E77E5220017E521 /* tableSummaryViewController.swift */; };
-		305FB4941E794E9D0017E521 /* newEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305FB4931E794E9D0017E521 /* newEventViewController.swift */; };
 		307D22991E5DB7EE00B00959 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307D22971E5DB7EE00B00959 /* Main.storyboard */; };
 		30839A981E4A166100EFD57F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30839A971E4A166100EFD57F /* AppDelegate.swift */; };
 		30839A9A1E4A166100EFD57F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30839A991E4A166100EFD57F /* ViewController.swift */; };
@@ -58,8 +56,6 @@
 		303913CA1E531338000D24AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3040B7DF1E7B3DBD009CBA1B /* closeTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = closeTabViewController.swift; sourceTree = "<group>"; };
 		3040B7E11E7BD092009CBA1B /* billEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = billEventViewController.swift; sourceTree = "<group>"; };
-		305FB4911E77E5220017E521 /* tableSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tableSummaryViewController.swift; sourceTree = "<group>"; };
-		305FB4931E794E9D0017E521 /* newEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newEventViewController.swift; sourceTree = "<group>"; };
 		307D22981E5DB7EE00B00959 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		30839A941E4A166100EFD57F /* harpersPOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = harpersPOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30839A971E4A166100EFD57F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -181,8 +177,6 @@
 				300260B01E671CC900655276 /* managerPasswordViewController.swift */,
 				30F363041E66C8CD008FFB7D /* liveStatsViewController.swift */,
 				30DC36131E70225B00BD1636 /* enterTableNoViewController.swift */,
-				305FB4911E77E5220017E521 /* tableSummaryViewController.swift */,
-				305FB4931E794E9D0017E521 /* newEventViewController.swift */,
 				3040B7E11E7BD092009CBA1B /* billEventViewController.swift */,
 			);
 			name = "Manager Login";
@@ -528,12 +522,10 @@
 				300260B11E671CC900655276 /* managerPasswordViewController.swift in Sources */,
 				30DC36141E70225B00BD1636 /* enterTableNoViewController.swift in Sources */,
 				301EAC7A1E6A1940007DD027 /* paymentViewController.swift in Sources */,
-				305FB4921E77E5220017E521 /* tableSummaryViewController.swift in Sources */,
 				30839A9A1E4A166100EFD57F /* ViewController.swift in Sources */,
 				30839A981E4A166100EFD57F /* AppDelegate.swift in Sources */,
 				302BAE5E1E60A1210024814C /* qrViewController.swift in Sources */,
 				30C67BE71E6451D000348655 /* tabSuccessViewController.swift in Sources */,
-				305FB4941E794E9D0017E521 /* newEventViewController.swift in Sources */,
 				30F2EF3B1E4C637100D76ABC /* orderViewController.swift in Sources */,
 				3040B7E21E7BD092009CBA1B /* billEventViewController.swift in Sources */,
 				3040B7E01E7B3DBD009CBA1B /* closeTabViewController.swift in Sources */,
@@ -698,7 +690,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 953KR5WRL4;
 				INFOPLIST_FILE = harpersPOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.owenharper.harpersPOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -714,7 +706,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 953KR5WRL4;
 				INFOPLIST_FILE = harpersPOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.owenharper.harpersPOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";

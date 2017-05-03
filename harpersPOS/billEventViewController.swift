@@ -16,7 +16,6 @@ class billEventViewController: UIViewController, UITableViewDelegate, UITableVie
   let database = FIRDatabase.database().reference()
   var currentTableTotal: Double = 0
   var currentOrderTotal: Int = 0
-  var numberOfTables: Int!
   var currentTableDrinksArray: [String] = []
   var currentEvent: String = ""
   var currentTable: Int = 0
@@ -29,21 +28,21 @@ class billEventViewController: UIViewController, UITableViewDelegate, UITableVie
   @IBOutlet weak var nextButton: UIButton!
   @IBOutlet weak var screenshotButton: UIButton!
   
+  //Updates the table and total for the next table when next is pressed
   @IBAction func nextPressed(_ sender: Any) {
     
-    
     currentTable += 1
-    
     billEvent(currentTable: currentTable)
     readTableQuantities(currentTable: currentTable)
     
-    
   }
   
+  //Runs the screenshot method when the save button is pressed
   @IBAction func screenshotPressed(_ sender: Any) {
     takeScreenShot()
   }
   
+  //Table Methods
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     return 1
   }
@@ -74,16 +73,19 @@ class billEventViewController: UIViewController, UITableViewDelegate, UITableVie
   public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return currentTableDrinksArray.count
   }
+  //End table methods
   
   
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    //Runs the method to update the table for either tabs or cards and resets total variables
     if cashBool == false {
-    currentTableTotal = 0
-    currentOrderTotal = 0
-    billEvent(currentTable: currentTable)
-    readTableQuantities(currentTable: currentTable)
+      currentTableTotal = 0
+      currentOrderTotal = 0
+      billEvent(currentTable: currentTable)
+      readTableQuantities(currentTable: currentTable)
     } else {
       currentTableTotal = 0
       currentOrderTotal = 0
@@ -93,15 +95,13 @@ class billEventViewController: UIViewController, UITableViewDelegate, UITableVie
       titleLabel.text = "Cash or Card"
       
     }
-    
-    // Do any additional setup after loading the view.
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
   
+  //Updates the current event label and the title label, runs the method to read the totals for the current table.
   func billEvent(currentTable: Int) {
     
     let currentTable = "Table " + String(format: "%02d", currentTable)
@@ -133,7 +133,7 @@ class billEventViewController: UIViewController, UITableViewDelegate, UITableVie
         }
       }
     })
-   
+    
   }
   
   func billEventCash() {
@@ -168,7 +168,7 @@ class billEventViewController: UIViewController, UITableViewDelegate, UITableVie
     
   }
   
-  
+  //Calculates and reads the total value of the tables tab inputted
   func readTotals(table: String) {
     
     self.currentOrderTotal = 0
@@ -230,6 +230,7 @@ class billEventViewController: UIViewController, UITableViewDelegate, UITableVie
     
   }
   
+  //Reads the total for cash/card orders
   func readTotalsCash() {
     
     
@@ -290,7 +291,7 @@ class billEventViewController: UIViewController, UITableViewDelegate, UITableVie
     
   }
   
-  
+  //Func to take a screenshot
   func takeScreenShot() {
     UIGraphicsBeginImageContext(view.frame.size)
     view.layer.render(in: UIGraphicsGetCurrentContext()!)
@@ -300,7 +301,7 @@ class billEventViewController: UIViewController, UITableViewDelegate, UITableVie
     
   }
   
-  
+  //Reads the quantities for tab order for a given table
   func readTableQuantities(currentTable: Int) {
     
     let currentTable = "Table " + String(format: "%02d", currentTable)
@@ -344,6 +345,7 @@ class billEventViewController: UIViewController, UITableViewDelegate, UITableVie
     })
   }
   
+  //Reads the quantities for cash/card orders
   func readTableQuantitiesCash() {
     
     

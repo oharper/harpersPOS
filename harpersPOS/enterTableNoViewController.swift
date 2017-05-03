@@ -13,123 +13,87 @@ import FirebaseDatabase
 class enterTableNoViewController: UIViewController {
   
   let database = FIRDatabase.database().reference()
-  var numberOfTables = 0
   var cashBool: Bool = false
-
+  
   @IBOutlet weak var currentEventLabel: UILabel!
+  @IBOutlet weak var tableField: UITextField!
   
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    readEvent()
+  }
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      readEvent()
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
     
-    @IBOutlet weak var tableField: UITextField!
-
+  }
+  
+  //Segues to the billEvent view controller when the cash bill button is pressed
   @IBAction func cashPressed(_ sender: Any) {
     cashBool = true
     self.performSegue(withIdentifier: "enterTableToBill", sender: nil)
   }
-
-    @IBAction func keyboardGoPressed(_ sender: Any) {
+  
+  //Checks to see if the table exists and if it does, closes it, displays an alert if it doesnt exist or if the format entered is wrong.
+  @IBAction func keyboardGoPressed(_ sender: Any) {
+    
+    if tableField.text?.characters.count == 2 {
       
       
-      
-      if tableField.text?.characters.count == 2 {
-        
-        
-        database.child("Status").observeSingleEvent(of: .value, with: { snapshot in
-          if let result = snapshot.children.allObjects as? [FIRDataSnapshot] {
-            for child in result {
-              if child.key == "Current Event" {
-                
-                let currentEvent = child.value as! String
-                
-                
-                let itemArray = currentEvent.components(separatedBy: ", ")
-                let eventDate = itemArray[0]
-                let eventName = itemArray[1]
-        
-        
-        
-        self.database.child("Events").child(String(eventDate + " | " + eventName)).child("Orders").child("Tab").child("Table " + self.tableField.text!).observeSingleEvent(of: .value, with: { snapshot in
-          if snapshot.children.allObjects is [FIRDataSnapshot] {
-            if snapshot.exists() {
-        
-      self.performSegue(withIdentifier: "enterTableToBill", sender: nil)
-            }
-            else {
+      database.child("Status").observeSingleEvent(of: .value, with: { snapshot in
+        if let result = snapshot.children.allObjects as? [FIRDataSnapshot] {
+          for child in result {
+            if child.key == "Current Event" {
               
-              self.performSegue(withIdentifier: "enterTableToBill", sender: nil)
+              let currentEvent = child.value as! String
               
-              //code to reject if the table has no values
-//              let alert = UIAlertController(title: "No Data for Table", message: "This table either does not exist or has not put anything on there tab.", preferredStyle: .alert)
-//              
-//              let tryAgain = UIAlertAction(title: "OK", style: .default) { (alert: UIAlertAction!) -> Void in
-//                self.tableField.text = ""
-//              }
-//              
-//              alert.addAction(tryAgain)
-//              
-//              self.present(alert, animated: true, completion:nil)
+              let itemArray = currentEvent.components(separatedBy: ", ")
+              let eventDate = itemArray[0]
+              let eventName = itemArray[1]
               
               
+              self.database.child("Events").child(String(eventDate + " | " + eventName)).child("Orders").child("Tab").child("Table " + self.tableField.text!).observeSingleEvent(of: .value, with: { snapshot in
+                if snapshot.exists() {
+                  
+                  self.performSegue(withIdentifier: "enterTableToBill", sender: nil)
+                  
+                }
+              })
             }
           }
-        })
-              }
-            }
-          }
-        })
-      }
-        
-      else {
-        
-        let alert = UIAlertController(title: "Invalid Table", message: "Please enter table as a 2 digit number.. eg. For table 7 enter '07'", preferredStyle: .alert)
-        
-        let tryAgain = UIAlertAction(title: "Try Again", style: .default) { (alert: UIAlertAction!) -> Void in
-          self.tableField.text = ""
         }
-        
-        alert.addAction(tryAgain)
-        
-        self.present(alert, animated: true, completion:nil)
-        
+      })
+    }
+      
+    else {
+      
+      let alert = UIAlertController(title: "Invalid Table", message: "Please enter table as a 2 digit number.. eg. For table 7 enter '07'", preferredStyle: .alert)
+      
+      let tryAgain = UIAlertAction(title: "Try Again", style: .default) { (alert: UIAlertAction!) -> Void in
+        self.tableField.text = ""
       }
-      }
+      
+      alert.addAction(tryAgain)
+      
+      self.present(alert, animated: true, completion:nil)
+      
+    }
+  }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if (segue.identifier == "tableEntered") {
-      let view : tableSummaryViewController = segue.destination as! tableSummaryViewController;
-      view.table = "Table " + tableField.text!
-    }
     
     if (segue.identifier == "enterTableToBill") {
       let view : billEventViewController = segue.destination as! billEventViewController;
       view.currentEvent = currentEventLabel.text!
       if tableField.text == "" {
       } else {
-      view.currentTable = Int(tableField.text!)!
+        view.currentTable = Int(tableField.text!)!
       }
       view.cashBool = cashBool
     }
   }
-
-        func getOrderDate() -> String {
-          let date = Date()
-          let formatter = DateFormatter()
-          formatter.dateFormat = "dd|MM|yy"
-          let result = formatter.string(from: date)
-          return result
-        }
   
-  
+  //Reads the current event
   func readEvent() {
     
     database.child("Status").observeSingleEvent(of: .value, with: { snapshot in
@@ -145,5 +109,4 @@ class enterTableNoViewController: UIViewController {
       }
     })
   }
-  
 }
